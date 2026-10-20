@@ -1,0 +1,1242 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#000000">
+  <title>Home | Damians Free Tutoring Evolved</title>
+  <style>
+    * { box-sizing: border-box; }
+    body { margin: 0; padding: 76px 24px 24px; background: #000; color: #fff; font: 16px Arial, sans-serif; }
+    .site-header { display: flex; align-items: center; justify-content: center; flex-wrap: wrap; gap: 16px; margin-bottom: 20px; }
+    h1 { margin: 4px 0; text-align: center; }
+    .site-nav { position: fixed; top: 12px; right: 12px; z-index: 10000; display: flex; gap: 10px; padding: 8px; border: 1px solid #fff; border-radius: 10px; background: #000; box-shadow: 0 2px 12px rgba(0, 0, 0, .7); }
+    .site-nav a { display: inline-flex; align-items: center; justify-content: center; padding: 9px 16px; border: 2px solid #fff; border-radius: 8px; background: #000; color: #fff; font-weight: 600; text-decoration: none; }
+    .site-nav a:hover, .site-nav a:focus-visible { background: #fff; color: #000; }
+    #search { display: block; width: min(100%, 400px); margin: 20px auto 28px; padding: 14px; border: 0; border-radius: 8px; font-size: 18px; }
+    #games { display: grid; grid-template-columns: repeat(auto-fill, minmax(170px, 1fr)); gap: 14px; max-width: 1200px; margin: auto; }
+    .game { display: block; min-width: 0; padding: 6px; border: 2px solid transparent; border-radius: 10px; color: inherit; text-align: center; text-decoration: none; transition: transform .3s ease, border-color .3s ease; }
+    .game[hidden] { display: none; }
+    .game:hover, .game:focus-visible { transform: scale(.95); border-color: #f2f2f2; outline: none; }
+    .thumbnail { position: relative; display: block; overflow: hidden; aspect-ratio: 1; border-radius: 6px; background: #222; }
+    .thumbnail img { width: 100%; height: 100%; object-fit: cover; }
+    .image-fallback { display: none; position: absolute; inset: 0; align-items: center; justify-content: center; padding: 12px; color: #aaa; font-size: 14px; }
+    .thumbnail img:not([src]), .thumbnail img[src=""] { display: none; }
+    .thumbnail img:not([src]) + .image-fallback, .thumbnail img[src=""] + .image-fallback { display: flex; }
+    .thumbnail img.image-failed { display: none; }
+    .thumbnail img.image-failed + .image-fallback { display: flex; }
+    .game-name { display: block; margin: 8px 0 2px; overflow-wrap: anywhere; }
+    #empty[hidden] { display: none; }
+    #empty { max-width: 1200px; margin: 24px auto; color: #ccc; text-align: center; }
+    @media (prefers-reduced-motion: reduce) { .game { transition: none; } }
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <h1>Damians Free Tutoring Evolved</h1>
+    <nav class="site-nav" aria-label="Main navigation">
+      <a href="index.html">Home</a>
+      <a href="../index.html#settings">Settings</a>
+    </nav>
+  </header>
+  <label for="search" hidden>Search games</label>
+  <input id="search" type="search" placeholder="Search games" aria-label="Search games">
+  <main id="games">
+    <a class="game" href="games/1v1lol.html" aria-label="Play 1v1lol">
+      <span class="thumbnail"><img src="https://gms.parcoil.com/1v1lol/logo.png" alt="" loading="lazy"><span class="image-fallback" aria-hidden="true">Image unavailable</span></span>
+      <span class="game-name">1v1lol</span>
+    </a>
+    <a class="game" href="games/1v1space.html" aria-label="Play 1v1space">
+      <span class="thumbnail"><img src="https://gms.parcoil.com/1v1space/splash.png" alt="" loading="lazy"><span class="image-fallback" aria-hidden="true">Image unavailable</span></span>
+      <span class="game-name">1v1space</span>
+    </a>
+    <a class="game" href="games/10-minutes-till-dawn.html" aria-label="Play 10 Minutes Till Dawn">
+      <span class="thumbnail"><img src="https://gms.parcoil.com/10-minutes-till-dawn/splash.png" alt="" loading="lazy"><span class="image-fallback" aria-hidden="true">Image unavailable</span></span>
+      <span class="game-name">10 Minutes Till Dawn</span>
+    </a>
+    <a class="game" href="games/100ng.html" aria-label="Play 100ng">
+      <span class="thumbnail"><img src="https://gms.parcoil.com/100ng/100ng.jpg" alt="" loading="lazy"><span class="image-fallback" aria-hidden="true">Image unavailable</span></span>
+      <span class="game-name">100ng</span>
+    </a>
+    <a class="game" href="games/2048.html" aria-label="Play 2048">
+      <span class="thumbnail"><img src="https://gms.parcoil.com/2048/2048.png" alt="" loading="lazy"><span class="image-fallback" aria-hidden="true">Image unavailable</span></span>
+      <span class="game-name">2048</span>
+    </a>
+    <a class="game" href="games/2048-multitask.html" aria-label="Play 2048 Multitask">
+      <span class="thumbnail"><img src="https://gms.parcoil.com/2048-multitask/splash.png" alt="" loading="lazy"><span class="image-fallback" aria-hidden="true">Image unavailable</span></span>
+      <span class="game-name">2048 Multitask</span>
+    </a>
+    <a class="game" href="games/9007199254740992.html" aria-label="Play 9007199254740992">
+      <span class="thumbnail"><img src="https://gms.parcoil.com/9007199254740992/logo-4.png" alt="" loading="lazy"><span class="image-fallback" aria-hidden="true">Image unavailable</span></span>
+      <span class="game-name">9007199254740992</span>
+    </a>
+    <a class="game" href="games/dogeminer.html" aria-label="Play DogeMiner">
+      <span class="thumbnail"><img src="https://gms.parcoil.com/DogeMiner/favicon.ico" alt="" loading="lazy"><span class="image-fallback" aria-hidden="true">Image unavailable</span></span>
+      <span class="game-name">DogeMiner</span>
+    </a>
+    <a class="game" href="games/hexgl.html" aria-label="Play HexGL">
+      <span class="thumbnail"><img src="https://gms.parcoil.com/HexGL/icon.png" alt="" loading="lazy"><span class="image-fallback" aria-hidden="true">Image unavailable</span></span>
+      <span class="game-name">HexGL</span>
+    </a>
+    <a class="game" href="games/offline-paradise.html" aria-label="Play Offline Paradise">
+      <span class="thumbnail"><img src="https://gms.parcoil.com/OfflineParadise/assets/icon.jpeg" alt="" loading="lazy"><span class="image-fallback" aria-hidden="true">Image unavailable</span></span>
+      <span class="game-name">Offline Paradise</span>
+    </a>
+    <a class="game" href="games/stickman-survival.html" aria-label="Play Stickman Survival">
+      <span class="thumbnail"><img src="https://gms.parcoil.com/Stickman-Survival/Icon.png" alt="" loading="lazy"><span class="image-fallback" aria-hidden="true">Image unavailable</span></span>
+      <span class="game-name">Stickman Survival</span>
+    </a>
+    <a class="game" href="games/a-dance-of-fire-and-ice.html" aria-label="Play A Dance of Fire and Ice">
+      <span class="thumbnail"><img src="https://gms.parcoil.com/a-dance-of-fire-and-ice/splash.png" alt="" loading="lazy"><span class="image-fallback" aria-hidden="true">Image unavailable</span></span>
+      <span class="game-name">A Dance of Fire and Ice</span>
+    </a>
+    <a class="game" href="games/achievement-unlocked.html" aria-label="Play Achievement Unlocked">
+      <span class="thumbnail"><img src="https://gms.parcoil.com/achievementunlocked/achievementunlocked.png" alt="" loading="lazy"><span class="image-fallback" aria-hidden="true">Image unavailable</span></span>
+      <span class="game-name">Achievement Unlocked</span>
+    </a>
+    <a class="game" href="games/a-dark-room.html" aria-label="Play A Dark Room">
+      <span class="thumbnail"><img src="https://gms.parcoil.com/adarkroom/splash.png" alt="" loading="lazy"><span class="image-fallback" aria-hidden="true">Image unavailable</span></span>
+      <span class="game-name">A Dark Room</span>
+    </a>
+    <a class="game" href="games/adrenaline-challenge.html" aria-label="Play Adrenaline Challenge">
+      <span class="thumbnail"><img src="https://gms.parcoil.com/adrenalinechallenge/adrenalinechallenge.jpg" alt="" loading="lazy"><span class="image-fallback" aria-hidden="true">Image unavailable</span></span>
+      <span class="game-name">Adrenaline Challenge</span>
+    </a>
+    <a class="game" href="games/adventure-drivers.html" aria-label="Play Adventure Drivers">
+      <span class="thumbnail"><img src="https://gms.parcoil.com/adventure-drivers/splash.png" alt="" loading="lazy"><span class="image-fallback" aria-hidden="true">Image unavailable</span></span>
+      <span class="game-name">Adventure Drivers</span>
+    </a>
+    <a class="game" href="games/ages-of-conflict.html" aria-label="Play Ages of Conflict">
+      <span class="thumbnail"><img src="https://gms.parcoil.com/ages-of-conflict/splash.jpg" alt="" loading="lazy"><span class="image-fallback" aria-hidden="true">Image unavailable</span></span>
+      <span class="game-name">Ages of Conflict</span>
+    </a>
+    <a class="game" href="games/alien-hominid.html" aria-label="Play Alien Hominid">
+      <span class="thumbnail"><img src="https://gms.parcoil.com/alienhominid/alienhominid.jpg" alt="" loading="lazy"><span class="image-fallback" aria-hidden="true">Image unavailable</span></span>
+      <span class="game-name">Alien Hominid</span>
+    </a>
+    <a class="game" href="games/align-4.html" aria-label="Play Align 4">
+      <span class="thumbnail"><img src="https://gms.parcoil.com/align-4/board.png" alt="" loading="lazy"><span class="image-fallback" aria-hidden="true">Image unavailable</span></span>
+      <span class="game-name">Align 4</span>
+    </a>
+    <a class="game" href="games/amidst-the-clouds.html" aria-label="Play Amidst the Clouds">
+      <span class="thumbnail"><img src="https://gms.parcoil.com/amidst-the-clouds/splash.png" alt="" loading="lazy"><span class="image-fallback" aria-hidden="true">Image unavailable</span></span>
+      <span class="game-name">Amidst the Clouds</span>
+    </a>
+    <a class="game" href="games/among-us.html" aria-label="Play Among Us">
+      <span class="thumbnail"><img src="https://gms.parcoil.com/among-us/red.png" alt="" loading="lazy"><span class="image-fallback" aria-hidden="true">Image unavailable</span></span>
+      <span class="game-name">Among Us</span>
+    </a>
+    <a class="game" href="games/angry-sharks.html" aria-label="Play Angry Sharks">
+      <span class="thumbnail"><img src="https://gms.parcoil.com/angry-sharks/assets/img/splash.png" alt="" loading="lazy"><span class="image-fallback" aria-hidden="true">Image unavailable</span></span>
+      <span class="game-name">Angry Sharks</span>
+    </a>
+    <a class="game" href="games/aquapark-slides.html" aria-label="Play Aquapark Slides">
+      <span class="thumbnail"><img src="https://gms.parcoil.com/aquapark-slides/splash.png" alt="" loading="lazy"><span class="image-fallback" aria-hidden="true">Image unavailable</span></span>
+      <span class="game-name">Aquapark Slides</span>
+    </a>
+    <a class="game" href="games/astray.html" aria-label="Play Astray">
+      <span class="thumbnail"><img src="https://gms.parcoil.com/astray/splash.png" alt="" loading="lazy"><span class="image-fallback" aria-hidden="true">Image unavailable</span></span>
+      <span class="game-name">Astray</span>
+    </a>
+    <a class="game" href="games/avalanche.html" aria-label="Play Avalanche">
+      <span class="thumbnail"><img src="https://gms.parcoil.com/avalanche/avalanche.png" alt="" loading="lazy"><span class="image-fallback" aria-hidden="true">Image unavailable</span></span>
+      <span class="game-name">Avalanche</span>
+    </a>
+    <a class="game" href="games/awesome-tanks-2.html" aria-label="Play Awesome Tanks 2">
+      <span class="thumbnail"><img src="https://gms.parcoil.com/awesometanks2/awesometanks2.jpg" alt="" loading="lazy"><span class="image-fallback" aria-hidden="true">Image unavailable</span></span>
+      <span class="game-name">Awesome Tanks 2</span>
+    </a>
+    <a class="game" href="games/backrooms.html" aria-label="Play Backrooms">
+      <span class="thumbnail"><img src="https://gms.parcoil.com/backrooms/img/splash.jpg" alt="" loading="lazy"><span class="image-fallback" aria-hidden="true">Image unavailable</span></span>
+      <span class="game-name">Backrooms</span>
+    </a>
+    <a class="game" href="games/bad-ice-cream.html" aria-label="Play Bad Ice Cream">
+      <span class="thumbnail"><img src="https://gms.parcoil.com/bad-ice-cream/bad-ice-cream.png" alt="" loading="lazy"><span class="image-fallback" aria-hidden="true">Image unavailable</span></span>
+      <span class="game-name">Bad Ice Cream</span>
+    </a>
+    <a class="game" href="games/bad-ice-cream-2.html" aria-label="Play Bad Ice Cream 2">
+      <span class="thumbnail"><img src="https://gms.parcoil.com/bad-ice-cream-2/bad-ice-cream-2.png" alt="" loading="lazy"><span class="image-fallback" aria-hidden="true">Image unavailable</span></span>
+      <span class="game-name">Bad Ice Cream 2</span>
+    </a>
+    <a class="game" href="games/bad-ice-cream-3.html" aria-label="Play Bad Ice Cream 3">
+      <span class="thumbnail"><img src="https://gms.parcoil.com/bad-ice-cream-3/bad-ice-cream-3.png" alt="" loading="lazy"><span class="image-fallback" aria-hidden="true">Image unavailable</span></span>
+      <span class="game-name">Bad Ice Cream 3</span>
+    </a>
+    <a class="game" href="games/baldi-s-basics.html" aria-label="Play Baldi&#x27;s Basics">
+      <span class="thumbnail"><img src="https://gms.parcoil.com/baldis-basics/splash.png" alt="" loading="lazy"><span class="image-fallback" aria-hidden="true">Image unavailable</span></span>
+      <span class="game-name">Baldi&#x27;s Basics</span>
+    </a>
+    <a class="game" href="games/ballistic-chickens.html" aria-label="Play Ballistic Chickens">
+      <span class="thumbnail"><img src="https://gms.parcoil.com/ballistic-chickens/logo.png" alt="" loading="lazy"><span class="image-fallback" aria-hidden="true">Image unavailable</span></span>
+      <span class="game-name">Ballistic Chickens</span>
+    </a>
+    <a class="game" href="games/basket-random.html" aria-label="Play Basket Random">
+      <span class="thumbnail"><img src="https://gms.parcoil.com/basket-random/splash.jpeg" alt="" loading="lazy"><span class="image-fallback" aria-hidden="true">Image unavailable</span></span>
+      <span class="game-name">Basket Random</span>
+    </a>
+    <a class="game" href="games/basketball-stars.html" aria-label="Play Basketball Stars">
+      <span class="thumbnail"><img src="https://gms.parcoil.com/basketball-stars/assets/images/basketball-stars.png" alt="" loading="lazy"><span class="image-fallback" aria-hidden="true">Image unavailable</span></span>
+      <span class="game-name">Basketball Stars</span>
+    </a>
+    <a class="game" href="games/basketbros-io.html" aria-label="Play Basketbros.io">
+      <span class="thumbnail"><img src="https://gms.parcoil.com/basketbros-io/thumb.jpg" alt="" loading="lazy"><span class="image-fallback" aria-hidden="true">Image unavailable</span></span>
+      <span class="game-name">Basketbros.io</span>
+    </a>
+    <a class="game" href="games/battle-for-gondor.html" aria-label="Play Battle for Gondor">
+      <span class="thumbnail"><img src="https://gms.parcoil.com/battleforgondor/battleforgondor.JPG" alt="" loading="lazy"><span class="image-fallback" aria-hidden="true">Image unavailable</span></span>
+      <span class="game-name">Battle for Gondor</span>
+    </a>
+    <a class="game" href="games/big-red-button.html" aria-label="Play Big Red Button">
+      <span class="thumbnail"><img src="https://gms.parcoil.com/bigredbutton/bigredbutton.png" alt="" loading="lazy"><span class="image-fallback" aria-hidden="true">Image unavailable</span></span>
+      <span class="game-name">Big Red Button</span>
+    </a>
+    <a class="game" href="games/bitlife.html" aria-label="Play BitLife">
+      <span class="thumbnail"><img src="https://gms.parcoil.com/bitlife/splash.png" alt="" loading="lazy"><span class="image-fallback" aria-hidden="true">Image unavailable</span></span>
+      <span class="game-name">BitLife</span>
+    </a>
+    <a class="game" href="games/black-hole-square.html" aria-label="Play Black Hole Square">
+      <span class="thumbnail"><img src="https://gms.parcoil.com/blacholesquare/icon.png" alt="" loading="lazy"><span class="image-fallback" aria-hidden="true">Image unavailable</span></span>
+      <span class="game-name">Black Hole Square</span>
+    </a>
+    <a class="game" href="games/black-knight.html" aria-label="Play Black Knight">
+      <span class="thumbnail"><img src="https://gms.parcoil.com/blackknight/blackknight.png" alt="" loading="lazy"><span class="image-fallback" aria-hidden="true">Image unavailable</span></span>
+      <span class="game-name">Black Knight</span>
+    </a>
+    <a class="game" href="games/bloons-td.html" aria-label="Play Bloons TD">
+      <span class="thumbnail"><img src="https://gms.parcoil.com/bloonstd/bloonstd.jpg" alt="" loading="lazy"><span class="image-fallback" aria-hidden="true">Image unavailable</span></span>
+      <span class="game-name">Bloons TD</span>
+    </a>
+    <a class="game" href="games/bloons-td-2.html" aria-label="Play Bloons TD 2">
+      <span class="thumbnail"><img src="https://gms.parcoil.com/bloonstd2/bloonstd2.png" alt="" loading="lazy"><span class="image-fallback" aria-hidden="true">Image unavailable</span></span>
+      <span class="game-name">Bloons TD 2</span>
+    </a>
+    <a class="game" href="games/bloxors.html" aria-label="Play Bloxors">
+      <span class="thumbnail"><img src="https://gms.parcoil.com/bloxors/title.png" alt="" loading="lazy"><span class="image-fallback" aria-hidden="true">Image unavailable</span></span>
+      <span class="game-name">Bloxors</span>
+    </a>
+    <a class="game" href="games/bntts.html" aria-label="Play BNTTS">
+      <span class="thumbnail"><img src="https://gms.parcoil.com/bntts/icons/icon-256.png" alt="" loading="lazy"><span class="image-fallback" aria-hidden="true">Image unavailable</span></span>
+      <span class="game-name">BNTTS</span>
+    </a>
+    <a class="game" href="games/bob-the-robber-2.html" aria-label="Play Bob the Robber 2">
+      <span class="thumbnail"><img src="https://gms.parcoil.com/bobtherobber2/splash.jpeg" alt="" loading="lazy"><span class="image-fallback" aria-hidden="true">Image unavailable</span></span>
+      <span class="game-name">Bob the Robber 2</span>
+    </a>
+    <a class="game" href="games/boxhead-2-play.html" aria-label="Play Boxhead 2 Play">
+      <span class="thumbnail"><img src="https://gms.parcoil.com/boxhead2play/boxhead2play.jpg" alt="" loading="lazy"><span class="image-fallback" aria-hidden="true">Image unavailable</span></span>
+      <span class="game-name">Boxhead 2 Play</span>
+    </a>
+    <a class="game" href="games/boxing-random.html" aria-label="Play Boxing Random">
+      <span class="thumbnail"><img src="https://gms.parcoil.com/boxing-random/512x512.jpg" alt="" loading="lazy"><span class="image-fallback" aria-hidden="true">Image unavailable</span></span>
+      <span class="game-name">Boxing Random</span>
+    </a>
+    <a class="game" href="games/breaking-the-bank.html" aria-label="Play Breaking the Bank">
+      <span class="thumbnail"><img src="https://gms.parcoil.com/breakingthebank/breakingthebank.png" alt="" loading="lazy"><span class="image-fallback" aria-hidden="true">Image unavailable</span></span>
+      <span class="game-name">Breaking the Bank</span>
+    </a>
+    <a class="game" href="games/btts.html" aria-label="Play BTTS">
+      <span class="thumbnail"><img src="https://gms.parcoil.com/btts/images.png" alt="" loading="lazy"><span class="image-fallback" aria-hidden="true">Image unavailable</span></span>
+      <span class="game-name">BTTS</span>
+    </a>
+    <a class="game" href="games/burger-and-frights.html" aria-label="Play Burger and Frights">
+      <span class="thumbnail"><img src="https://gms.parcoil.com/burger-and-frights/splash.png" alt="" loading="lazy"><span class="image-fallback" aria-hidden="true">Image unavailable</span></span>
+      <span class="game-name">Burger and Frights</span>
+    </a>
+    <a class="game" href="games/cannon-basketball-4.html" aria-label="Play Cannon Basketball 4">
+      <span class="thumbnail"><img src="https://gms.parcoil.com/cannon-basketball-4/img/splash.png" alt="" loading="lazy"><span class="image-fallback" aria-hidden="true">Image unavailable</span></span>
+      <span class="game-name">Cannon Basketball 4</span>
+    </a>
+    <a class="game" href="games/canyon-defense.html" aria-label="Play Canyon Defense">
+      <span class="thumbnail"><img src="https://gms.parcoil.com/canyondefense/canyondefense.png" alt="" loading="lazy"><span class="image-fallback" aria-hidden="true">Image unavailable</span></span>
+      <span class="game-name">Canyon Defense</span>
+    </a>
+    <a class="game" href="games/cars-simulator.html" aria-label="Play Cars Simulator">
+      <span class="thumbnail"><img src="https://gms.parcoil.com/cars-simulator/splash.png" alt="" loading="lazy"><span class="image-fallback" aria-hidden="true">Image unavailable</span></span>
+      <span class="game-name">Cars Simulator</span>
+    </a>
+    <a class="game" href="games/cell-machine.html" aria-label="Play Cell Machine">
+      <span class="thumbnail"><img src="https://gms.parcoil.com/cell-machine/img/te9nDu.png" alt="" loading="lazy"><span class="image-fallback" aria-hidden="true">Image unavailable</span></span>
+      <span class="game-name">Cell Machine</span>
+    </a>
+    <a class="game" href="games/champion-island.html" aria-label="Play Champion Island">
+      <span class="thumbnail"><img src="https://gms.parcoil.com/champion-island/splash.png" alt="" loading="lazy"><span class="image-fallback" aria-hidden="true">Image unavailable</span></span>
+      <span class="game-name">Champion Island</span>
+    </a>
+    <a class="game" href="games/champion-archer.html" aria-label="Play Champion Archer">
+      <span class="thumbnail"><img src="https://gms.parcoil.com/championarcher/championarcher.png" alt="" loading="lazy"><span class="image-fallback" aria-hidden="true">Image unavailable</span></span>
+      <span class="game-name">Champion Archer</span>
+    </a>
+    <a class="game" href="games/chill-radio.html" aria-label="Play Chill Radio">
+      <span class="thumbnail"><img src="https://gms.parcoil.com/chill-radio/img/chill-icon.png" alt="" loading="lazy"><span class="image-fallback" aria-hidden="true">Image unavailable</span></span>
+      <span class="game-name">Chill Radio</span>
+    </a>
+    <a class="game" href="games/chrome-dino.html" aria-label="Play Chrome Dino">
+      <span class="thumbnail"><img src="https://gms.parcoil.com/chrome-dino/images/default_100_percent/offline/100-error-offline.png" alt="" loading="lazy"><span class="image-fallback" aria-hidden="true">Image unavailable</span></span>
+      <span class="game-name">Chrome Dino</span>
+    </a>
+    <a class="game" href="games/circlo.html" aria-label="Play Circlo">
+      <span class="thumbnail"><img src="https://gms.parcoil.com/circlo/img/download.png" alt="" loading="lazy"><span class="image-fallback" aria-hidden="true">Image unavailable</span></span>
+      <span class="game-name">Circlo</span>
+    </a>
+    <a class="game" href="games/cluster-rush.html" aria-label="Play Cluster Rush">
+      <span class="thumbnail"><img src="https://gms.parcoil.com/cluster-rush/splash.png" alt="" loading="lazy"><span class="image-fallback" aria-hidden="true">Image unavailable</span></span>
+      <span class="game-name">Cluster Rush</span>
+    </a>
+    <a class="game" href="games/cn-ping-pong.html" aria-label="Play CN Ping Pong">
+      <span class="thumbnail"><img src="https://gms.parcoil.com/cnpingpong/tabletennisultimate.png" alt="" loading="lazy"><span class="image-fallback" aria-hidden="true">Image unavailable</span></span>
+      <span class="game-name">CN Ping Pong</span>
+    </a>
+    <a class="game" href="games/connect-3.html" aria-label="Play Connect 3">
+      <span class="thumbnail"><img src="https://gms.parcoil.com/connect3/connect3.png" alt="" loading="lazy"><span class="image-fallback" aria-hidden="true">Image unavailable</span></span>
+      <span class="game-name">Connect 3</span>
+    </a>
+    <a class="game" href="games/cookie-clicker.html" aria-label="Play Cookie Clicker">
+      <span class="thumbnail"><img src="https://gms.parcoil.com/cookie-clicker/cookie1.jpeg" alt="" loading="lazy"><span class="image-fallback" aria-hidden="true">Image unavailable</span></span>
+      <span class="game-name">Cookie Clicker</span>
+    </a>
+    <a class="game" href="games/core-ball.html" aria-label="Play Core Ball">
+      <span class="thumbnail"><img src="https://gms.parcoil.com/core-ball/pr_source.png" alt="" loading="lazy"><span class="image-fallback" aria-hidden="true">Image unavailable</span></span>
+      <span class="game-name">Core Ball</span>
+    </a>
+    <a class="game" href="games/craftmine.html" aria-label="Play Craftmine">
+      <span class="thumbnail"><img src="https://gms.parcoil.com/craftmine/images/animal-sheet0.png" alt="" loading="lazy"><span class="image-fallback" aria-hidden="true">Image unavailable</span></span>
+      <span class="game-name">Craftmine</span>
+    </a>
+    <a class="game" href="games/creative-kill-chamber.html" aria-label="Play Creative Kill Chamber">
+      <span class="thumbnail"><img src="https://gms.parcoil.com/creativekillchamber/creativekillchamber.jpg" alt="" loading="lazy"><span class="image-fallback" aria-hidden="true">Image unavailable</span></span>
+      <span class="game-name">Creative Kill Chamber</span>
+    </a>
+    <a class="game" href="games/crossy-road.html" aria-label="Play Crossy Road">
+      <span class="thumbnail"><img src="https://gms.parcoil.com/crossyroad/crossyroad.png" alt="" loading="lazy"><span class="image-fallback" aria-hidden="true">Image unavailable</span></span>
+      <span class="game-name">Crossy Road</span>
+    </a>
+    <a class="game" href="games/cs-go-clicker.html" aria-label="Play CS:GO Clicker">
+      <span class="thumbnail"><img src="https://gms.parcoil.com/csgo-clicker/images/case1.png" alt="" loading="lazy"><span class="image-fallback" aria-hidden="true">Image unavailable</span></span>
+      <span class="game-name">CS:GO Clicker</span>
+    </a>
+    <a class="game" href="games/ctr.html" aria-label="Play CTR">
+      <span class="thumbnail"><img src="https://gms.parcoil.com/ctr/logo.png" alt="" loading="lazy"><span class="image-fallback" aria-hidden="true">Image unavailable</span></span>
+      <span class="game-name">CTR</span>
+    </a>
+    <a class="game" href="games/ctr-holiday.html" aria-label="Play CTR Holiday">
+      <span class="thumbnail"><img src="https://gms.parcoil.com/ctr-holiday/favicon.ico" alt="" loading="lazy"><span class="image-fallback" aria-hidden="true">Image unavailable</span></span>
+      <span class="game-name">CTR Holiday</span>
+    </a>
+    <a class="game" href="games/ctr-tr.html" aria-label="Play CTR TR">
+      <span class="thumbnail"><img src="https://gms.parcoil.com/ctr-tr/logo.png" alt="" loading="lazy"><span class="image-fallback" aria-hidden="true">Image unavailable</span></span>
+      <span class="game-name">CTR TR</span>
+    </a>
+    <a class="game" href="games/cubefield.html" aria-label="Play Cubefield">
+      <span class="thumbnail"><img src="https://gms.parcoil.com/cubefield/assets/unnamed.png" alt="" loading="lazy"><span class="image-fallback" aria-hidden="true">Image unavailable</span></span>
+      <span class="game-name">Cubefield</span>
+    </a>
+    <a class="game" href="games/cupcake-2048.html" aria-label="Play Cupcake 2048">
+      <span class="thumbnail"><img src="https://gms.parcoil.com/cupcake2048/favicon.ico" alt="" loading="lazy"><span class="image-fallback" aria-hidden="true">Image unavailable</span></span>
+      <span class="game-name">Cupcake 2048</span>
+    </a>
+    <a class="game" href="games/dante.html" aria-label="Play Dante">
+      <span class="thumbnail"><img src="https://gms.parcoil.com/dante/splash.png" alt="" loading="lazy"><span class="image-fallback" aria-hidden="true">Image unavailable</span></span>
+      <span class="game-name">Dante</span>
+    </a>
+    <a class="game" href="games/deal-or-no-deal.html" aria-label="Play Deal or No Deal">
+      <span class="thumbnail"><img src="https://gms.parcoil.com/deal-or-no-deal/index.jpg" alt="" loading="lazy"><span class="image-fallback" aria-hidden="true">Image unavailable</span></span>
+      <span class="game-name">Deal or No Deal</span>
+    </a>
+    <a class="game" href="games/death-run-3d.html" aria-label="Play Death Run 3D">
+      <span class="thumbnail"><img src="https://gms.parcoil.com/death-run-3d/img/death.png" alt="" loading="lazy"><span class="image-fallback" aria-hidden="true">Image unavailable</span></span>
+      <span class="game-name">Death Run 3D</span>
+    </a>
+    <a class="game" href="games/defend-the-tank.html" aria-label="Play Defend the Tank">
+      <span class="thumbnail"><img src="https://gms.parcoil.com/defend-the-tank/images/splash.jpg" alt="" loading="lazy"><span class="image-fallback" aria-hidden="true">Image unavailable</span></span>
+      <span class="game-name">Defend the Tank</span>
+    </a>
+    <a class="game" href="games/doctor-acorn-2.html" aria-label="Play Doctor Acorn 2">
+      <span class="thumbnail"><img src="https://gms.parcoil.com/doctor-acorn2/splash.jpg" alt="" loading="lazy"><span class="image-fallback" aria-hidden="true">Image unavailable</span></span>
+      <span class="game-name">Doctor Acorn 2</span>
+    </a>
+    <a class="game" href="games/doge-2048.html" aria-label="Play Doge 2048">
+      <span class="thumbnail"><img src="https://gms.parcoil.com/doge2048/doge1.jpeg" alt="" loading="lazy"><span class="image-fallback" aria-hidden="true">Image unavailable</span></span>
+      <span class="game-name">Doge 2048</span>
+    </a>
+    <a class="game" href="games/doodle-jump.html" aria-label="Play Doodle Jump">
+      <span class="thumbnail"><img src="https://gms.parcoil.com/doodle-jump/doodle.png" alt="" loading="lazy"><span class="image-fallback" aria-hidden="true">Image unavailable</span></span>
+      <span class="game-name">Doodle Jump</span>
+    </a>
+    <a class="game" href="games/double-wires.html" aria-label="Play Double Wires">
+      <span class="thumbnail"><img src="https://gms.parcoil.com/doublewires/doublewires.png" alt="" loading="lazy"><span class="image-fallback" aria-hidden="true">Image unavailable</span></span>
+      <span class="game-name">Double Wires</span>
+    </a>
+    <a class="game" href="games/dragon-vs-bricks.html" aria-label="Play Dragon vs. Bricks">
+      <span class="thumbnail"><img src="https://gms.parcoil.com/dragon-vs-bricks/splash.png" alt="" loading="lazy"><span class="image-fallback" aria-hidden="true">Image unavailable</span></span>
+      <span class="game-name">Dragon vs. Bricks</span>
+    </a>
+    <a class="game" href="games/draw-the-hill.html" aria-label="Play Draw the Hill">
+      <span class="thumbnail"><img src="https://gms.parcoil.com/draw-the-hill/icons/icon-512.png" alt="" loading="lazy"><span class="image-fallback" aria-hidden="true">Image unavailable</span></span>
+      <span class="game-name">Draw the Hill</span>
+    </a>
+    <a class="game" href="games/drift-boss.html" aria-label="Play Drift Boss">
+      <span class="thumbnail"><img src="https://gms.parcoil.com/drift-boss/logo.png" alt="" loading="lazy"><span class="image-fallback" aria-hidden="true">Image unavailable</span></span>
+      <span class="game-name">Drift Boss</span>
+    </a>
+    <a class="game" href="games/drift-hunters.html" aria-label="Play Drift Hunters">
+      <span class="thumbnail"><img src="https://gms.parcoil.com/drift-hunters/drift-hunters.png" alt="" loading="lazy"><span class="image-fallback" aria-hidden="true">Image unavailable</span></span>
+      <span class="game-name">Drift Hunters</span>
+    </a>
+    <a class="game" href="games/drive-mad.html" aria-label="Play Drive Mad">
+      <span class="thumbnail"><img src="https://gms.parcoil.com/drive-mad/logo.jpg" alt="" loading="lazy"><span class="image-fallback" aria-hidden="true">Image unavailable</span></span>
+      <span class="game-name">Drive Mad</span>
+    </a>
+    <a class="game" href="games/duck-life-1.html" aria-label="Play Duck Life 1">
+      <span class="thumbnail"><img src="https://gms.parcoil.com/ducklife1/ducklife.png" alt="" loading="lazy"><span class="image-fallback" aria-hidden="true">Image unavailable</span></span>
+      <span class="game-name">Duck Life 1</span>
+    </a>
+    <a class="game" href="games/duck-life-2.html" aria-label="Play Duck Life 2">
+      <span class="thumbnail"><img src="https://gms.parcoil.com/ducklife2/ducklife2.png" alt="" loading="lazy"><span class="image-fallback" aria-hidden="true">Image unavailable</span></span>
+      <span class="game-name">Duck Life 2</span>
+    </a>
+    <a class="game" href="games/duck-life-3.html" aria-label="Play Duck Life 3">
+      <span class="thumbnail"><img src="https://gms.parcoil.com/ducklife3/duck.png" alt="" loading="lazy"><span class="image-fallback" aria-hidden="true">Image unavailable</span></span>
+      <span class="game-name">Duck Life 3</span>
+    </a>
+    <a class="game" href="games/duck-life-4.html" aria-label="Play Duck Life 4">
+      <span class="thumbnail"><img src="https://gms.parcoil.com/ducklife4/splash.jpg" alt="" loading="lazy"><span class="image-fallback" aria-hidden="true">Image unavailable</span></span>
+      <span class="game-name">Duck Life 4</span>
+    </a>
+    <a class="game" href="games/edge-surf.html" aria-label="Play Edge Surf">
+      <span class="thumbnail"><img src="https://gms.parcoil.com/edge-surf/splash.png" alt="" loading="lazy"><span class="image-fallback" aria-hidden="true">Image unavailable</span></span>
+      <span class="game-name">Edge Surf</span>
+    </a>
+    <a class="game" href="games/edge-not-found.html" aria-label="Play Edge Not Found">
+      <span class="thumbnail"><img src="https://gms.parcoil.com/edgenotfound/edge.png" alt="" loading="lazy"><span class="image-fallback" aria-hidden="true">Image unavailable</span></span>
+      <span class="game-name">Edge Not Found</span>
+    </a>
+    <a class="game" href="games/eel-slap.html" aria-label="Play Eel Slap">
+      <span class="thumbnail"><img src="https://gms.parcoil.com/eel-slap/eel-slap.png" alt="" loading="lazy"><span class="image-fallback" aria-hidden="true">Image unavailable</span></span>
+      <span class="game-name">Eel Slap</span>
+    </a>
+    <a class="game" href="games/elastic-man.html" aria-label="Play Elastic Man">
+      <span class="thumbnail"><img src="https://gms.parcoil.com/elasticman/elasticman.jpg" alt="" loading="lazy"><span class="image-fallback" aria-hidden="true">Image unavailable</span></span>
+      <span class="game-name">Elastic Man</span>
+    </a>
+    <a class="game" href="games/endless-war-3.html" aria-label="Play Endless War 3">
+      <span class="thumbnail"><img src="https://gms.parcoil.com/endlesswar3/endlesswar3.png" alt="" loading="lazy"><span class="image-fallback" aria-hidden="true">Image unavailable</span></span>
+      <span class="game-name">Endless War 3</span>
+    </a>
+    <a class="game" href="games/escaping-the-prison.html" aria-label="Play Escaping the Prison">
+      <span class="thumbnail"><img src="https://gms.parcoil.com/escapingtheprison/escapingtheprison.jpg" alt="" loading="lazy"><span class="image-fallback" aria-hidden="true">Image unavailable</span></span>
+      <span class="game-name">Escaping the Prison</span>
+    </a>
+    <a class="game" href="games/evil-glitch.html" aria-label="Play Evil Glitch">
+      <span class="thumbnail"><img src="https://gms.parcoil.com/evil-glitch/evil.png" alt="" loading="lazy"><span class="image-fallback" aria-hidden="true">Image unavailable</span></span>
+      <span class="game-name">Evil Glitch</span>
+    </a>
+    <a class="game" href="games/evolution.html" aria-label="Play Evolution">
+      <span class="thumbnail"><img src="https://gms.parcoil.com/evolution/splash.png" alt="" loading="lazy"><span class="image-fallback" aria-hidden="true">Image unavailable</span></span>
+      <span class="game-name">Evolution</span>
+    </a>
+    <a class="game" href="games/exo.html" aria-label="Play Exo">
+      <span class="thumbnail"><img src="https://gms.parcoil.com/exo/img/small.jpg" alt="" loading="lazy"><span class="image-fallback" aria-hidden="true">Image unavailable</span></span>
+      <span class="game-name">Exo</span>
+    </a>
+    <a class="game" href="games/factory-balls.html" aria-label="Play Factory Balls">
+      <span class="thumbnail"><img src="https://gms.parcoil.com/factoryballs/images/splash.png" alt="" loading="lazy"><span class="image-fallback" aria-hidden="true">Image unavailable</span></span>
+      <span class="game-name">Factory Balls</span>
+    </a>
+    <a class="game" href="games/fairsquares.html" aria-label="Play Fairsquares">
+      <span class="thumbnail"><img src="https://gms.parcoil.com/fairsquares/index.icon.png" alt="" loading="lazy"><span class="image-fallback" aria-hidden="true">Image unavailable</span></span>
+      <span class="game-name">Fairsquares</span>
+    </a>
+    <a class="game" href="games/fake-virus.html" aria-label="Play Fake Virus">
+      <span class="thumbnail"><img src="https://gms.parcoil.com/fake-virus/icon.png" alt="" loading="lazy"><span class="image-fallback" aria-hidden="true">Image unavailable</span></span>
+      <span class="game-name">Fake Virus</span>
+    </a>
+    <a class="game" href="games/fancy-pants-adventures.html" aria-label="Play Fancy Pants Adventures">
+      <span class="thumbnail"><img src="https://gms.parcoil.com/fancypantsadventures/fancypantsadventure.png" alt="" loading="lazy"><span class="image-fallback" aria-hidden="true">Image unavailable</span></span>
+      <span class="game-name">Fancy Pants Adventures</span>
+    </a>
+    <a class="game" href="games/fireboy-and-watergirl-forest-temple.html" aria-label="Play Fireboy and Watergirl: Forest Temple">
+      <span class="thumbnail"><img src="https://gms.parcoil.com/fireboywatergirlforesttemple/logo.jpeg" alt="" loading="lazy"><span class="image-fallback" aria-hidden="true">Image unavailable</span></span>
+      <span class="game-name">Fireboy and Watergirl: Forest Temple</span>
+    </a>
+    <a class="game" href="games/flappy-2048.html" aria-label="Play Flappy 2048">
+      <span class="thumbnail"><img src="https://gms.parcoil.com/flappy-2048/favicon.ico" alt="" loading="lazy"><span class="image-fallback" aria-hidden="true">Image unavailable</span></span>
+      <span class="game-name">Flappy 2048</span>
+    </a>
+    <a class="game" href="games/flappy-bird.html" aria-label="Play Flappy Bird">
+      <span class="thumbnail"><img src="https://gms.parcoil.com/flappy-bird/flappybird.jpg" alt="" loading="lazy"><span class="image-fallback" aria-hidden="true">Image unavailable</span></span>
+      <span class="game-name">Flappy Bird</span>
+    </a>
+    <a class="game" href="games/flash-tetris.html" aria-label="Play Flash Tetris">
+      <span class="thumbnail"><img src="https://gms.parcoil.com/flashtetris/flashtetris.png" alt="" loading="lazy"><span class="image-fallback" aria-hidden="true">Image unavailable</span></span>
+      <span class="game-name">Flash Tetris</span>
+    </a>
+    <a class="game" href="games/flippy-fish.html" aria-label="Play Flippy Fish">
+      <span class="thumbnail"><img src="https://gms.parcoil.com/flippy-fish/2022_10_28_0jt_Kleki.png" alt="" loading="lazy"><span class="image-fallback" aria-hidden="true">Image unavailable</span></span>
+      <span class="game-name">Flippy Fish</span>
+    </a>
+    <a class="game" href="games/five-nights-at-wario-s-fnaw.html" aria-label="Play Five Nights at Wario&#x27;s (FNAW)">
+      <span class="thumbnail"><img src="https://gms.parcoil.com/fnaw/splash.png" alt="" loading="lazy"><span class="image-fallback" aria-hidden="true">Image unavailable</span></span>
+      <span class="game-name">Five Nights at Wario&#x27;s (FNAW)</span>
+    </a>
+    <a class="game" href="games/friday-night-funkin.html" aria-label="Play Friday Night Funkin&#x27;">
+      <span class="thumbnail"><img src="https://gms.parcoil.com/fridaynightfunkin/fnf-icon.jpg" alt="" loading="lazy"><span class="image-fallback" aria-hidden="true">Image unavailable</span></span>
+      <span class="game-name">Friday Night Funkin&#x27;</span>
+    </a>
+    <a class="game" href="games/froggy-s-battle.html" aria-label="Play Froggy&#x27;s Battle">
+      <span class="thumbnail"><img src="https://gms.parcoil.com/froggys-battle/splash.png" alt="" loading="lazy"><span class="image-fallback" aria-hidden="true">Image unavailable</span></span>
+      <span class="game-name">Froggy&#x27;s Battle</span>
+    </a>
+    <a class="game" href="games/fruit-ninja.html" aria-label="Play Fruit Ninja">
+      <span class="thumbnail"><img src="https://gms.parcoil.com/fruitninja/FruitNinjaTeaser.jpg" alt="" loading="lazy"><span class="image-fallback" aria-hidden="true">Image unavailable</span></span>
+      <span class="game-name">Fruit Ninja</span>
+    </a>
+    <a class="game" href="games/frying-nemo.html" aria-label="Play Frying Nemo">
+      <span class="thumbnail"><img src="https://gms.parcoil.com/frying-nemo/splash.png" alt="" loading="lazy"><span class="image-fallback" aria-hidden="true">Image unavailable</span></span>
+      <span class="game-name">Frying Nemo</span>
+    </a>
+    <a class="game" href="games/game-inside.html" aria-label="Play Game Inside">
+      <span class="thumbnail"><img src="https://gms.parcoil.com/game-inside/img/display.png" alt="" loading="lazy"><span class="image-fallback" aria-hidden="true">Image unavailable</span></span>
+      <span class="game-name">Game Inside</span>
+    </a>
+    <a class="game" href="games/ga-aleifisd-net.html" aria-label="Play ga.aleifisd.net">
+      <span class="thumbnail"><img src="https://upload.wikimedia.org/wikipedia/commons/1/16/Google_Drive_Logo_05.2026.png?utm_source=commons.wikimedia.org&amp;utm_campaign=index&amp;utm_content=thumbnail_unscaled&amp;_=20260519084643" alt="" loading="lazy"><span class="image-fallback" aria-hidden="true">Image unavailable</span></span>
+      <span class="game-name">ga.aleifisd.net</span>
+    </a>
+    <a class="game" href="games/generic-fishing-game.html" aria-label="Play Generic Fishing Game">
+      <span class="thumbnail"><img src="https://gms.parcoil.com/generic-fishing-game/splash.png" alt="" loading="lazy"><span class="image-fallback" aria-hidden="true">Image unavailable</span></span>
+      <span class="game-name">Generic Fishing Game</span>
+    </a>
+    <a class="game" href="games/geo-dash.html" aria-label="Play Geo Dash">
+      <span class="thumbnail"><img src="https://gms.parcoil.com/geodash/geoscratchicon.png" alt="" loading="lazy"><span class="image-fallback" aria-hidden="true">Image unavailable</span></span>
+      <span class="game-name">Geo Dash</span>
+    </a>
+    <a class="game" href="games/george-and-the-printer.html" aria-label="Play George and the Printer">
+      <span class="thumbnail"><img src="https://gms.parcoil.com/georgeandtheprinter/img/SnDTEn.png" alt="" loading="lazy"><span class="image-fallback" aria-hidden="true">Image unavailable</span></span>
+      <span class="game-name">George and the Printer</span>
+    </a>
+    <a class="game" href="games/getaway-shootout.html" aria-label="Play Getaway Shootout">
+      <span class="thumbnail"><img src="https://gms.parcoil.com/getaway-shootout/img/images.jpg" alt="" loading="lazy"><span class="image-fallback" aria-hidden="true">Image unavailable</span></span>
+      <span class="game-name">Getaway Shootout</span>
+    </a>
+    <a class="game" href="games/gimme-the-airpod.html" aria-label="Play Gimme the Airpod">
+      <span class="thumbnail"><img src="https://gms.parcoil.com/gimme-the-airpod/img/logo.png" alt="" loading="lazy"><span class="image-fallback" aria-hidden="true">Image unavailable</span></span>
+      <span class="game-name">Gimme the Airpod</span>
+    </a>
+    <a class="game" href="games/glass-city.html" aria-label="Play Glass City">
+      <span class="thumbnail"><img src="https://gms.parcoil.com/glass-city/image.png" alt="" loading="lazy"><span class="image-fallback" aria-hidden="true">Image unavailable</span></span>
+      <span class="game-name">Glass City</span>
+    </a>
+    <a class="game" href="games/go-ball.html" aria-label="Play Go Ball">
+      <span class="thumbnail"><img src="https://gms.parcoil.com/go-ball/game.jpg" alt="" loading="lazy"><span class="image-fallback" aria-hidden="true">Image unavailable</span></span>
+      <span class="game-name">Go Ball</span>
+    </a>
+    <a class="game" href="games/goodnight.html" aria-label="Play Goodnight">
+      <span class="thumbnail"><img src="https://gms.parcoil.com/goodnight/goodnight.jpg" alt="" loading="lazy"><span class="image-fallback" aria-hidden="true">Image unavailable</span></span>
+      <span class="game-name">Goodnight</span>
+    </a>
+    <a class="game" href="games/google-feud.html" aria-label="Play Google Feud">
+      <span class="thumbnail"><img src="https://gms.parcoil.com/google-feud/splash.png" alt="" loading="lazy"><span class="image-fallback" aria-hidden="true">Image unavailable</span></span>
+      <span class="game-name">Google Feud</span>
+    </a>
+    <a class="game" href="games/google-snake.html" aria-label="Play Google Snake">
+      <span class="thumbnail"><img src="https://gms.parcoil.com/google-snake/img/snake.png" alt="" loading="lazy"><span class="image-fallback" aria-hidden="true">Image unavailable</span></span>
+      <span class="game-name">Google Snake</span>
+    </a>
+    <a class="game" href="games/gravity-soccer.html" aria-label="Play Gravity Soccer">
+      <span class="thumbnail"><img src="https://gms.parcoil.com/gravity-soccer/splash.png" alt="" loading="lazy"><span class="image-fallback" aria-hidden="true">Image unavailable</span></span>
+      <span class="game-name">Gravity Soccer</span>
+    </a>
+    <a class="game" href="games/greybox.html" aria-label="Play Greybox">
+      <span class="thumbnail"><img src="https://gms.parcoil.com/greybox/ico.png" alt="" loading="lazy"><span class="image-fallback" aria-hidden="true">Image unavailable</span></span>
+      <span class="game-name">Greybox</span>
+    </a>
+    <a class="game" href="games/grindcraft.html" aria-label="Play Grindcraft">
+      <span class="thumbnail"><img src="https://gms.parcoil.com/grindcraft/img/splash.png" alt="" loading="lazy"><span class="image-fallback" aria-hidden="true">Image unavailable</span></span>
+      <span class="game-name">Grindcraft</span>
+    </a>
+    <a class="game" href="games/hacker-type.html" aria-label="Play Hacker Type">
+      <span class="thumbnail"><img src="https://gms.parcoil.com/hackertype/logo192.png" alt="" loading="lazy"><span class="image-fallback" aria-hidden="true">Image unavailable</span></span>
+      <span class="game-name">Hacker Type</span>
+    </a>
+    <a class="game" href="games/handshakes.html" aria-label="Play Handshakes">
+      <span class="thumbnail"><img src="https://gms.parcoil.com/handshakes/splaher.png" alt="" loading="lazy"><span class="image-fallback" aria-hidden="true">Image unavailable</span></span>
+      <span class="game-name">Handshakes</span>
+    </a>
+    <a class="game" href="games/happy-hop.html" aria-label="Play Happy Hop">
+      <span class="thumbnail"><img src="https://gms.parcoil.com/happy-hop/splash.png" alt="" loading="lazy"><span class="image-fallback" aria-hidden="true">Image unavailable</span></span>
+      <span class="game-name">Happy Hop</span>
+    </a>
+    <a class="game" href="games/hba.html" aria-label="Play HBA">
+      <span class="thumbnail"><img src="https://gms.parcoil.com/hba/hoverbotarena.JPG" alt="" loading="lazy"><span class="image-fallback" aria-hidden="true">Image unavailable</span></span>
+      <span class="game-name">HBA</span>
+    </a>
+    <a class="game" href="games/helicopter.html" aria-label="Play Helicopter">
+      <span class="thumbnail"><img src="https://gms.parcoil.com/helicopter/helicopter.png" alt="" loading="lazy"><span class="image-fallback" aria-hidden="true">Image unavailable</span></span>
+      <span class="game-name">Helicopter</span>
+    </a>
+    <a class="game" href="games/hex-empire.html" aria-label="Play Hex Empire">
+      <span class="thumbnail"><img src="https://gms.parcoil.com/hexempire/hexempire.jpg" alt="" loading="lazy"><span class="image-fallback" aria-hidden="true">Image unavailable</span></span>
+      <span class="game-name">Hex Empire</span>
+    </a>
+    <a class="game" href="games/hextris.html" aria-label="Play Hextris">
+      <span class="thumbnail"><img src="https://gms.parcoil.com/hextris/images/hextris-logo.png" alt="" loading="lazy"><span class="image-fallback" aria-hidden="true">Image unavailable</span></span>
+      <span class="game-name">Hextris</span>
+    </a>
+    <a class="game" href="games/hungry-lamu.html" aria-label="Play Hungry Lamu">
+      <span class="thumbnail"><img src="https://gms.parcoil.com/hungry-lamu/splash.png" alt="" loading="lazy"><span class="image-fallback" aria-hidden="true">Image unavailable</span></span>
+      <span class="game-name">Hungry Lamu</span>
+    </a>
+    <a class="game" href="games/idle-breakout.html" aria-label="Play Idle Breakout">
+      <span class="thumbnail"><img src="https://gms.parcoil.com/idle-breakout/img/thumbnail.png" alt="" loading="lazy"><span class="image-fallback" aria-hidden="true">Image unavailable</span></span>
+      <span class="game-name">Idle Breakout</span>
+    </a>
+    <a class="game" href="games/idle-shark.html" aria-label="Play Idle Shark">
+      <span class="thumbnail"><img src="https://gms.parcoil.com/idle-shark/img/sharkgame.png" alt="" loading="lazy"><span class="image-fallback" aria-hidden="true">Image unavailable</span></span>
+      <span class="game-name">Idle Shark</span>
+    </a>
+    <a class="game" href="games/impossible-quiz.html" aria-label="Play Impossible Quiz">
+      <span class="thumbnail"><img src="https://gms.parcoil.com/impossiblequiz/impossiblequiz.png" alt="" loading="lazy"><span class="image-fallback" aria-hidden="true">Image unavailable</span></span>
+      <span class="game-name">Impossible Quiz</span>
+    </a>
+    <a class="game" href="games/interactive-buddy.html" aria-label="Play Interactive Buddy">
+      <span class="thumbnail"><img src="https://gms.parcoil.com/interactivebuddy/interactivebuddy.jpg" alt="" loading="lazy"><span class="image-fallback" aria-hidden="true">Image unavailable</span></span>
+      <span class="game-name">Interactive Buddy</span>
+    </a>
+    <a class="game" href="games/jetpack-joyride.html" aria-label="Play Jetpack Joyride">
+      <span class="thumbnail"><img src="https://gms.parcoil.com/jetpack-joyride/splash.jpg" alt="" loading="lazy"><span class="image-fallback" aria-hidden="true">Image unavailable</span></span>
+      <span class="game-name">Jetpack Joyride</span>
+    </a>
+    <a class="game" href="games/just-fall.html" aria-label="Play Just Fall">
+      <span class="thumbnail"><img src="https://gms.parcoil.com/just-fall/unnamed.png" alt="" loading="lazy"><span class="image-fallback" aria-hidden="true">Image unavailable</span></span>
+      <span class="game-name">Just Fall</span>
+    </a>
+    <a class="game" href="games/just-one-boss.html" aria-label="Play Just One Boss">
+      <span class="thumbnail"><img src="https://gms.parcoil.com/just-one-boss/pv1Gr5.png" alt="" loading="lazy"><span class="image-fallback" aria-hidden="true">Image unavailable</span></span>
+      <span class="game-name">Just One Boss</span>
+    </a>
+    <a class="game" href="games/kitchen-gun-game.html" aria-label="Play Kitchen Gun Game">
+      <span class="thumbnail"><img src="https://gms.parcoil.com/kitchen-gun-game/splash.png" alt="" loading="lazy"><span class="image-fallback" aria-hidden="true">Image unavailable</span></span>
+      <span class="game-name">Kitchen Gun Game</span>
+    </a>
+    <a class="game" href="games/kitten-cannon.html" aria-label="Play Kitten Cannon">
+      <span class="thumbnail"><img src="https://gms.parcoil.com/kittencannon/kittencannon.png" alt="" loading="lazy"><span class="image-fallback" aria-hidden="true">Image unavailable</span></span>
+      <span class="game-name">Kitten Cannon</span>
+    </a>
+    <a class="game" href="games/knife-master.html" aria-label="Play Knife Master">
+      <span class="thumbnail"><img src="https://gms.parcoil.com/knife-master/512x512.jpg" alt="" loading="lazy"><span class="image-fallback" aria-hidden="true">Image unavailable</span></span>
+      <span class="game-name">Knife Master</span>
+    </a>
+    <a class="game" href="games/krunker.html" aria-label="Play Krunker">
+      <span class="thumbnail"><img src="https://gms.parcoil.com/krunker/img/krunker-io.jpg" alt="" loading="lazy"><span class="image-fallback" aria-hidden="true">Image unavailable</span></span>
+      <span class="game-name">Krunker</span>
+    </a>
+    <a class="game" href="games/learn-to-fly.html" aria-label="Play Learn to Fly">
+      <span class="thumbnail"><img src="https://gms.parcoil.com/learntofly/learntofly.png" alt="" loading="lazy"><span class="image-fallback" aria-hidden="true">Image unavailable</span></span>
+      <span class="game-name">Learn to Fly</span>
+    </a>
+    <a class="game" href="games/learn-to-fly-2.html" aria-label="Play Learn to Fly 2">
+      <span class="thumbnail"><img src="https://gms.parcoil.com/learntofly2/learn-to-fly-2.jpg" alt="" loading="lazy"><span class="image-fallback" aria-hidden="true">Image unavailable</span></span>
+      <span class="game-name">Learn to Fly 2</span>
+    </a>
+    <a class="game" href="games/madalin-stunt-cars-2.html" aria-label="Play Madalin Stunt Cars 2">
+      <span class="thumbnail"><img src="https://gms.parcoil.com/madalin-stunt-cars-2/img/logo.jpg" alt="" loading="lazy"><span class="image-fallback" aria-hidden="true">Image unavailable</span></span>
+      <span class="game-name">Madalin Stunt Cars 2</span>
+    </a>
+    <a class="game" href="games/madalin-stunt-cars-3.html" aria-label="Play Madalin Stunt Cars 3">
+      <span class="thumbnail"><img src="https://gms.parcoil.com/madalin-stunt-cars-3/img/index.jpg" alt="" loading="lazy"><span class="image-fallback" aria-hidden="true">Image unavailable</span></span>
+      <span class="game-name">Madalin Stunt Cars 3</span>
+    </a>
+    <a class="game" href="games/mario.html" aria-label="Play Mario">
+      <span class="thumbnail"><img src="https://gms.parcoil.com/mario/Theme/Mario.gif" alt="" loading="lazy"><span class="image-fallback" aria-hidden="true">Image unavailable</span></span>
+      <span class="game-name">Mario</span>
+    </a>
+    <a class="game" href="games/marvin-spectrum.html" aria-label="Play Marvin Spectrum">
+      <span class="thumbnail"><img src="https://gms.parcoil.com/marvinspectrum/marvinspectrum.png" alt="" loading="lazy"><span class="image-fallback" aria-hidden="true">Image unavailable</span></span>
+      <span class="game-name">Marvin Spectrum</span>
+    </a>
+    <a class="game" href="games/matrix-rampage.html" aria-label="Play Matrix Rampage">
+      <span class="thumbnail"><img src="https://gms.parcoil.com/matrixrampage/matrixrampage.jpg" alt="" loading="lazy"><span class="image-fallback" aria-hidden="true">Image unavailable</span></span>
+      <span class="game-name">Matrix Rampage</span>
+    </a>
+    <a class="game" href="games/meme-2048.html" aria-label="Play Meme 2048">
+      <span class="thumbnail"><img src="https://gms.parcoil.com/meme2048/img/hot.gif" alt="" loading="lazy"><span class="image-fallback" aria-hidden="true">Image unavailable</span></span>
+      <span class="game-name">Meme 2048</span>
+    </a>
+    <a class="game" href="games/merge-round-racers.html" aria-label="Play Merge Round Racers">
+      <span class="thumbnail"><img src="https://gms.parcoil.com/merge-round-racers/splash.png" alt="" loading="lazy"><span class="image-fallback" aria-hidden="true">Image unavailable</span></span>
+      <span class="game-name">Merge Round Racers</span>
+    </a>
+    <a class="game" href="games/mine-blocks.html" aria-label="Play Mine Blocks">
+      <span class="thumbnail"><img src="https://gms.parcoil.com/mineblocks/splash.png" alt="" loading="lazy"><span class="image-fallback" aria-hidden="true">Image unavailable</span></span>
+      <span class="game-name">Mine Blocks</span>
+    </a>
+    <a class="game" href="games/minecraft-1-5.html" aria-label="Play Minecraft 1.5">
+      <span class="thumbnail"><img src="https://gms.parcoil.com/minecraft-15/splash.jpeg" alt="" loading="lazy"><span class="image-fallback" aria-hidden="true">Image unavailable</span></span>
+      <span class="game-name">Minecraft 1.5</span>
+    </a>
+    <a class="game" href="games/minecraft-1-8.html" aria-label="Play Minecraft 1.8">
+      <span class="thumbnail"><img src="https://gms.parcoil.com/minecraft-18/splash.png" alt="" loading="lazy"><span class="image-fallback" aria-hidden="true">Image unavailable</span></span>
+      <span class="game-name">Minecraft 1.8</span>
+    </a>
+    <a class="game" href="games/minecraft-classic.html" aria-label="Play Minecraft Classic">
+      <span class="thumbnail"><img src="https://gms.parcoil.com/minecraft-classic/pack.png" alt="" loading="lazy"><span class="image-fallback" aria-hidden="true">Image unavailable</span></span>
+      <span class="game-name">Minecraft Classic</span>
+    </a>
+    <a class="game" href="games/minecraft-beta.html" aria-label="Play Minecraft Beta">
+      <span class="thumbnail"><img src="https://gms.parcoil.com/minecraftbeta/bg_main.png" alt="" loading="lazy"><span class="image-fallback" aria-hidden="true">Image unavailable</span></span>
+      <span class="game-name">Minecraft Beta</span>
+    </a>
+    <a class="game" href="games/minesweeper.html" aria-label="Play Minesweeper">
+      <span class="thumbnail"><img src="https://gms.parcoil.com/minesweeper/img/minesweeper.png" alt="" loading="lazy"><span class="image-fallback" aria-hidden="true">Image unavailable</span></span>
+      <span class="game-name">Minesweeper</span>
+    </a>
+    <a class="game" href="games/mini-putt.html" aria-label="Play Mini Putt">
+      <span class="thumbnail"><img src="https://gms.parcoil.com/miniputt/miniputt.png" alt="" loading="lazy"><span class="image-fallback" aria-hidden="true">Image unavailable</span></span>
+      <span class="game-name">Mini Putt</span>
+    </a>
+    <a class="game" href="games/missiles.html" aria-label="Play Missiles">
+      <span class="thumbnail"><img src="https://gms.parcoil.com/missiles/miss.png" alt="" loading="lazy"><span class="image-fallback" aria-hidden="true">Image unavailable</span></span>
+      <span class="game-name">Missiles</span>
+    </a>
+    <a class="game" href="games/moto-x3m.html" aria-label="Play Moto X3M">
+      <span class="thumbnail"><img src="https://gms.parcoil.com/motox3m/splash.jpg" alt="" loading="lazy"><span class="image-fallback" aria-hidden="true">Image unavailable</span></span>
+      <span class="game-name">Moto X3M</span>
+    </a>
+    <a class="game" href="games/moto-x3m-pool.html" aria-label="Play Moto X3M Pool">
+      <span class="thumbnail"><img src="https://gms.parcoil.com/motox3m-pool/splash.jpg" alt="" loading="lazy"><span class="image-fallback" aria-hidden="true">Image unavailable</span></span>
+      <span class="game-name">Moto X3M Pool</span>
+    </a>
+    <a class="game" href="games/moto-x3m-spooky.html" aria-label="Play Moto X3M Spooky">
+      <span class="thumbnail"><img src="https://gms.parcoil.com/motox3m-spooky/splash.jpeg" alt="" loading="lazy"><span class="image-fallback" aria-hidden="true">Image unavailable</span></span>
+      <span class="game-name">Moto X3M Spooky</span>
+    </a>
+    <a class="game" href="games/moto-x3m-winter.html" aria-label="Play Moto X3M Winter">
+      <span class="thumbnail"><img src="https://gms.parcoil.com/motox3m-winter/download.jpeg" alt="" loading="lazy"><span class="image-fallback" aria-hidden="true">Image unavailable</span></span>
+      <span class="game-name">Moto X3M Winter</span>
+    </a>
+    <a class="game" href="games/moto-x3m-2.html" aria-label="Play Moto X3M 2">
+      <span class="thumbnail"><img src="https://gms.parcoil.com/motox3m2/Moto-X3M-2.webp" alt="" loading="lazy"><span class="image-fallback" aria-hidden="true">Image unavailable</span></span>
+      <span class="game-name">Moto X3M 2</span>
+    </a>
+    <a class="game" href="games/my-rusty-submarine.html" aria-label="Play My Rusty Submarine">
+      <span class="thumbnail"><img src="https://gms.parcoil.com/my-rusty-submarine/splash.png" alt="" loading="lazy"><span class="image-fallback" aria-hidden="true">Image unavailable</span></span>
+      <span class="game-name">My Rusty Submarine</span>
+    </a>
+    <a class="game" href="games/n-gon.html" aria-label="Play N-Gon">
+      <span class="thumbnail"><img src="https://gms.parcoil.com/n-gon/img/n-gonbot.png" alt="" loading="lazy"><span class="image-fallback" aria-hidden="true">Image unavailable</span></span>
+      <span class="game-name">N-Gon</span>
+    </a>
+    <a class="game" href="games/ninja.html" aria-label="Play Ninja">
+      <span class="thumbnail"><img src="https://gms.parcoil.com/ninja/logo1.png" alt="" loading="lazy"><span class="image-fallback" aria-hidden="true">Image unavailable</span></span>
+      <span class="game-name">Ninja</span>
+    </a>
+    <a class="game" href="games/ninja-vs-evil-corp.html" aria-label="Play Ninja vs Evil Corp">
+      <span class="thumbnail"><img src="https://gms.parcoil.com/ninjavsevilcorp/splash.png" alt="" loading="lazy"><span class="image-fallback" aria-hidden="true">Image unavailable</span></span>
+      <span class="game-name">Ninja vs Evil Corp</span>
+    </a>
+    <a class="game" href="games/noob-steve-parkour.html" aria-label="Play Noob Steve Parkour">
+      <span class="thumbnail"><img src="https://gms.parcoil.com/noob-steve-parkour/512x512.jpg" alt="" loading="lazy"><span class="image-fallback" aria-hidden="true">Image unavailable</span></span>
+      <span class="game-name">Noob Steve Parkour</span>
+    </a>
+    <a class="game" href="games/ns-shaft.html" aria-label="Play NS Shaft">
+      <span class="thumbnail"><img src="https://gms.parcoil.com/ns-shaft/favicon.png" alt="" loading="lazy"><span class="image-fallback" aria-hidden="true">Image unavailable</span></span>
+      <span class="game-name">NS Shaft</span>
+    </a>
+    <a class="game" href="games/ns-resurgence.html" aria-label="Play NS Resurgence">
+      <span class="thumbnail"><img src="https://gms.parcoil.com/nsresurgence/neon.png" alt="" loading="lazy"><span class="image-fallback" aria-hidden="true">Image unavailable</span></span>
+      <span class="game-name">NS Resurgence</span>
+    </a>
+    <a class="game" href="games/om-bounce.html" aria-label="Play Om Bounce">
+      <span class="thumbnail"><img src="https://gms.parcoil.com/om-bounce/assets/icon.jpeg" alt="" loading="lazy"><span class="image-fallback" aria-hidden="true">Image unavailable</span></span>
+      <span class="game-name">Om Bounce</span>
+    </a>
+    <a class="game" href="games/ovo.html" aria-label="Play OVO">
+      <span class="thumbnail"><img src="https://gms.parcoil.com/ovo/ovo3.png" alt="" loading="lazy"><span class="image-fallback" aria-hidden="true">Image unavailable</span></span>
+      <span class="game-name">OVO</span>
+    </a>
+    <a class="game" href="games/pandemic-2.html" aria-label="Play Pandemic 2">
+      <span class="thumbnail"><img src="https://gms.parcoil.com/pandemic2/pandemic2.png" alt="" loading="lazy"><span class="image-fallback" aria-hidden="true">Image unavailable</span></span>
+      <span class="game-name">Pandemic 2</span>
+    </a>
+    <a class="game" href="games/papa-s-burgeria.html" aria-label="Play Papa&#x27;s Burgeria">
+      <span class="thumbnail"><img src="https://gms.parcoil.com/papasburgeria/splash.jpg" alt="" loading="lazy"><span class="image-fallback" aria-hidden="true">Image unavailable</span></span>
+      <span class="game-name">Papa&#x27;s Burgeria</span>
+    </a>
+    <a class="game" href="games/papa-s-pizzeria.html" aria-label="Play Papa&#x27;s Pizzeria">
+      <span class="thumbnail"><img src="https://gms.parcoil.com/papaspizzaria/papaspizzaria.jpg" alt="" loading="lazy"><span class="image-fallback" aria-hidden="true">Image unavailable</span></span>
+      <span class="game-name">Papa&#x27;s Pizzeria</span>
+    </a>
+    <a class="game" href="games/paper-io-2.html" aria-label="Play Paper.io 2">
+      <span class="thumbnail"><img src="https://gms.parcoil.com/paperio2/images/icon512.png" alt="" loading="lazy"><span class="image-fallback" aria-hidden="true">Image unavailable</span></span>
+      <span class="game-name">Paper.io 2</span>
+    </a>
+    <a class="game" href="games/papery-planes.html" aria-label="Play Papery Planes">
+      <span class="thumbnail"><img src="https://gms.parcoil.com/papery-planes/splash.jpg" alt="" loading="lazy"><span class="image-fallback" aria-hidden="true">Image unavailable</span></span>
+      <span class="game-name">Papery Planes</span>
+    </a>
+    <a class="game" href="games/particle-clicker.html" aria-label="Play Particle Clicker">
+      <span class="thumbnail"><img src="https://gms.parcoil.com/particle-clicker/assets/pc32@2x.png" alt="" loading="lazy"><span class="image-fallback" aria-hidden="true">Image unavailable</span></span>
+      <span class="game-name">Particle Clicker</span>
+    </a>
+    <a class="game" href="games/pixel-gun-survival.html" aria-label="Play Pixel Gun Survival">
+      <span class="thumbnail"><img src="https://gms.parcoil.com/pixel-gun-survival/512x512.png" alt="" loading="lazy"><span class="image-fallback" aria-hidden="true">Image unavailable</span></span>
+      <span class="game-name">Pixel Gun Survival</span>
+    </a>
+    <a class="game" href="games/polybranch.html" aria-label="Play Polybranch">
+      <span class="thumbnail"><img src="https://gms.parcoil.com/polybranch/img/pic1.png" alt="" loading="lazy"><span class="image-fallback" aria-hidden="true">Image unavailable</span></span>
+      <span class="game-name">Polybranch</span>
+    </a>
+    <a class="game" href="games/popcat-classic.html" aria-label="Play Popcat Classic">
+      <span class="thumbnail"><img src="https://gms.parcoil.com/popcat-classic/android-chrome-512x512.png" alt="" loading="lazy"><span class="image-fallback" aria-hidden="true">Image unavailable</span></span>
+      <span class="game-name">Popcat Classic</span>
+    </a>
+    <a class="game" href="games/portal-flash.html" aria-label="Play Portal Flash">
+      <span class="thumbnail"><img src="https://gms.parcoil.com/portalflash/portaltheflashversion.jpg" alt="" loading="lazy"><span class="image-fallback" aria-hidden="true">Image unavailable</span></span>
+      <span class="game-name">Portal Flash</span>
+    </a>
+    <a class="game" href="games/precision-client.html" aria-label="Play Precision Client">
+      <span class="thumbnail"><img src="https://gms.parcoil.com/precision-client/logo.png" alt="" loading="lazy"><span class="image-fallback" aria-hidden="true">Image unavailable</span></span>
+      <span class="game-name">Precision Client</span>
+    </a>
+    <a class="game" href="games/protektor.html" aria-label="Play Protektor">
+      <span class="thumbnail"><img src="https://gms.parcoil.com/protektor/splash.jpg" alt="" loading="lazy"><span class="image-fallback" aria-hidden="true">Image unavailable</span></span>
+      <span class="game-name">Protektor</span>
+    </a>
+    <a class="game" href="games/push-the-square.html" aria-label="Play Push the Square">
+      <span class="thumbnail"><img src="https://gms.parcoil.com/push-the-square/img/splash.png" alt="" loading="lazy"><span class="image-fallback" aria-hidden="true">Image unavailable</span></span>
+      <span class="game-name">Push the Square</span>
+    </a>
+    <a class="game" href="games/push-your-luck.html" aria-label="Play Push Your Luck">
+      <span class="thumbnail"><img src="https://gms.parcoil.com/push-your-luck/assets/img/push.png" alt="" loading="lazy"><span class="image-fallback" aria-hidden="true">Image unavailable</span></span>
+      <span class="game-name">Push Your Luck</span>
+    </a>
+    <a class="game" href="games/rabbit-samurai.html" aria-label="Play Rabbit Samurai">
+      <span class="thumbnail"><img src="https://gms.parcoil.com/rabbit-samurai/splash.png" alt="" loading="lazy"><span class="image-fallback" aria-hidden="true">Image unavailable</span></span>
+      <span class="game-name">Rabbit Samurai</span>
+    </a>
+    <a class="game" href="games/rabbit-samurai-2.html" aria-label="Play Rabbit Samurai 2">
+      <span class="thumbnail"><img src="https://gms.parcoil.com/rabbit-samurai2/splash.png" alt="" loading="lazy"><span class="image-fallback" aria-hidden="true">Image unavailable</span></span>
+      <span class="game-name">Rabbit Samurai 2</span>
+    </a>
+    <a class="game" href="games/resent-client.html" aria-label="Play Resent Client">
+      <span class="thumbnail"><img src="https://gms.parcoil.com/resent-client/splash.jpg" alt="" loading="lazy"><span class="image-fallback" aria-hidden="true">Image unavailable</span></span>
+      <span class="game-name">Resent Client</span>
+    </a>
+    <a class="game" href="games/retro-bowl.html" aria-label="Play Retro Bowl">
+      <span class="thumbnail"><img src="https://gms.parcoil.com/retro-bowl/img/icon.jpg" alt="" loading="lazy"><span class="image-fallback" aria-hidden="true">Image unavailable</span></span>
+      <span class="game-name">Retro Bowl</span>
+    </a>
+    <a class="game" href="games/riddle-school.html" aria-label="Play Riddle School">
+      <span class="thumbnail"><img src="https://gms.parcoil.com/riddleschool/riddleschool.png" alt="" loading="lazy"><span class="image-fallback" aria-hidden="true">Image unavailable</span></span>
+      <span class="game-name">Riddle School</span>
+    </a>
+    <a class="game" href="games/riddle-school-2.html" aria-label="Play Riddle School 2">
+      <span class="thumbnail"><img src="https://gms.parcoil.com/riddleschool2/riddleschool2.png" alt="" loading="lazy"><span class="image-fallback" aria-hidden="true">Image unavailable</span></span>
+      <span class="game-name">Riddle School 2</span>
+    </a>
+    <a class="game" href="games/riddle-school-3.html" aria-label="Play Riddle School 3">
+      <span class="thumbnail"><img src="https://gms.parcoil.com/riddleschool3/riddleschool3.png" alt="" loading="lazy"><span class="image-fallback" aria-hidden="true">Image unavailable</span></span>
+      <span class="game-name">Riddle School 3</span>
+    </a>
+    <a class="game" href="games/riddle-school-4.html" aria-label="Play Riddle School 4">
+      <span class="thumbnail"><img src="https://gms.parcoil.com/riddleschool4/riddleschool4.png" alt="" loading="lazy"><span class="image-fallback" aria-hidden="true">Image unavailable</span></span>
+      <span class="game-name">Riddle School 4</span>
+    </a>
+    <a class="game" href="games/riddle-school-5.html" aria-label="Play Riddle School 5">
+      <span class="thumbnail"><img src="https://gms.parcoil.com/riddleschool5/riddleschool5.png" alt="" loading="lazy"><span class="image-fallback" aria-hidden="true">Image unavailable</span></span>
+      <span class="game-name">Riddle School 5</span>
+    </a>
+    <a class="game" href="games/riddle-transfer.html" aria-label="Play Riddle Transfer">
+      <span class="thumbnail"><img src="https://gms.parcoil.com/riddletransfer/riddletransfer.png" alt="" loading="lazy"><span class="image-fallback" aria-hidden="true">Image unavailable</span></span>
+      <span class="game-name">Riddle Transfer</span>
+    </a>
+    <a class="game" href="games/riddle-transfer-2.html" aria-label="Play Riddle Transfer 2">
+      <span class="thumbnail"><img src="https://gms.parcoil.com/riddletransfer2/riddletransfer2.png" alt="" loading="lazy"><span class="image-fallback" aria-hidden="true">Image unavailable</span></span>
+      <span class="game-name">Riddle Transfer 2</span>
+    </a>
+    <a class="game" href="games/rolling-forests.html" aria-label="Play Rolling Forests">
+      <span class="thumbnail"><img src="https://gms.parcoil.com/rolling-forests/icon.png" alt="" loading="lazy"><span class="image-fallback" aria-hidden="true">Image unavailable</span></span>
+      <span class="game-name">Rolling Forests</span>
+    </a>
+    <a class="game" href="games/rolly-vortex.html" aria-label="Play Rolly Vortex">
+      <span class="thumbnail"><img src="https://gms.parcoil.com/rolly-vortex/icon-256.png" alt="" loading="lazy"><span class="image-fallback" aria-hidden="true">Image unavailable</span></span>
+      <span class="game-name">Rolly Vortex</span>
+    </a>
+    <a class="game" href="games/rooftop-snipers.html" aria-label="Play Rooftop Snipers">
+      <span class="thumbnail"><img src="https://gms.parcoil.com/rooftop-snipers/img/thumb.png" alt="" loading="lazy"><span class="image-fallback" aria-hidden="true">Image unavailable</span></span>
+      <span class="game-name">Rooftop Snipers</span>
+    </a>
+    <a class="game" href="games/ruffle.html" aria-label="Play Ruffle">
+      <span class="thumbnail"><img src="https://gms.parcoil.com/ruffle/splash.png" alt="" loading="lazy"><span class="image-fallback" aria-hidden="true">Image unavailable</span></span>
+      <span class="game-name">Ruffle</span>
+    </a>
+    <a class="game" href="games/slap-the-monkey.html" aria-label="Play Slap The Monkey">
+      <span class="thumbnail"><img src="https://gms.parcoil.com/slap-the-monkey/slap-the-monkey.jpg" alt="" loading="lazy"><span class="image-fallback" aria-hidden="true">Image unavailable</span></span>
+      <span class="game-name">Slap The Monkey</span>
+    </a>
+    <a class="game" href="games/sand-game.html" aria-label="Play Sand Game">
+      <span class="thumbnail"><img src="https://gms.parcoil.com/sand-game/sand-game.PNG" alt="" loading="lazy"><span class="image-fallback" aria-hidden="true">Image unavailable</span></span>
+      <span class="game-name">Sand Game</span>
+    </a>
+    <a class="game" href="games/sandboxels.html" aria-label="Play Sandboxels">
+      <span class="thumbnail"><img src="https://gms.parcoil.com/sandboxels/sandboxels.jpg" alt="" loading="lazy"><span class="image-fallback" aria-hidden="true">Image unavailable</span></span>
+      <span class="game-name">Sandboxels</span>
+    </a>
+    <a class="game" href="games/santy-is-home.html" aria-label="Play Santy is Home">
+      <span class="thumbnail"><img src="https://gms.parcoil.com/santy-is-home/splash.png" alt="" loading="lazy"><span class="image-fallback" aria-hidden="true">Image unavailable</span></span>
+      <span class="game-name">Santy is Home</span>
+    </a>
+    <a class="game" href="games/scrap-metal.html" aria-label="Play Scrap Metal">
+      <span class="thumbnail"><img src="https://gms.parcoil.com/scrapmetal/img/splash.png" alt="" loading="lazy"><span class="image-fallback" aria-hidden="true">Image unavailable</span></span>
+      <span class="game-name">Scrap Metal</span>
+    </a>
+    <a class="game" href="games/shell-shockers.html" aria-label="Play Shell Shockers">
+      <span class="thumbnail"><img src="https://gms.parcoil.com/shellshockers/img/favicon.png" alt="" loading="lazy"><span class="image-fallback" aria-hidden="true">Image unavailable</span></span>
+      <span class="game-name">Shell Shockers</span>
+    </a>
+    <a class="game" href="games/shot-in-the-dark.html" aria-label="Play Shot in the Dark">
+      <span class="thumbnail"><img src="https://gms.parcoil.com/shotinthedark/shot.png" alt="" loading="lazy"><span class="image-fallback" aria-hidden="true">Image unavailable</span></span>
+      <span class="game-name">Shot in the Dark</span>
+    </a>
+    <a class="game" href="games/shuttle-deck.html" aria-label="Play Shuttle Deck">
+      <span class="thumbnail"><img src="https://gms.parcoil.com/shuttledeck/splash.png" alt="" loading="lazy"><span class="image-fallback" aria-hidden="true">Image unavailable</span></span>
+      <span class="game-name">Shuttle Deck</span>
+    </a>
+    <a class="game" href="games/sky-car-stunt.html" aria-label="Play Sky Car Stunt">
+      <span class="thumbnail"><img src="https://gms.parcoil.com/sky-car-stunt/512x512.jpg" alt="" loading="lazy"><span class="image-fallback" aria-hidden="true">Image unavailable</span></span>
+      <span class="game-name">Sky Car Stunt</span>
+    </a>
+    <a class="game" href="games/sleeping-beauty.html" aria-label="Play Sleeping Beauty">
+      <span class="thumbnail"><img src="https://gms.parcoil.com/sleepingbeauty/splash.png" alt="" loading="lazy"><span class="image-fallback" aria-hidden="true">Image unavailable</span></span>
+      <span class="game-name">Sleeping Beauty</span>
+    </a>
+    <a class="game" href="games/slime-rush-td.html" aria-label="Play Slime Rush TD">
+      <span class="thumbnail"><img src="https://gms.parcoil.com/slime-rush-td/splash.png" alt="" loading="lazy"><span class="image-fallback" aria-hidden="true">Image unavailable</span></span>
+      <span class="game-name">Slime Rush TD</span>
+    </a>
+    <a class="game" href="games/slope.html" aria-label="Play Slope">
+      <span class="thumbnail"><img src="https://gms.parcoil.com/slope/slope4.jpeg" alt="" loading="lazy"><span class="image-fallback" aria-hidden="true">Image unavailable</span></span>
+      <span class="game-name">Slope</span>
+    </a>
+    <a class="game" href="games/slope-2.html" aria-label="Play Slope 2">
+      <span class="thumbnail"><img src="https://gms.parcoil.com/slope-2/slope-2-logo.png" alt="" loading="lazy"><span class="image-fallback" aria-hidden="true">Image unavailable</span></span>
+      <span class="game-name">Slope 2</span>
+    </a>
+    <a class="game" href="games/slope-ball.html" aria-label="Play Slope Ball">
+      <span class="thumbnail"><img src="https://gms.parcoil.com/slope-ball/icon.jpg" alt="" loading="lazy"><span class="image-fallback" aria-hidden="true">Image unavailable</span></span>
+      <span class="game-name">Slope Ball</span>
+    </a>
+    <a class="game" href="games/smash-karts.html" aria-label="Play Smash Karts">
+      <span class="thumbnail"><img src="https://gms.parcoil.com/smashkarts/images/icon-512.png" alt="" loading="lazy"><span class="image-fallback" aria-hidden="true">Image unavailable</span></span>
+      <span class="game-name">Smash Karts</span>
+    </a>
+    <a class="game" href="games/smoking-barrels.html" aria-label="Play Smoking Barrels">
+      <span class="thumbnail"><img src="https://gms.parcoil.com/smokingbarrels/smokingbarrels.jpg" alt="" loading="lazy"><span class="image-fallback" aria-hidden="true">Image unavailable</span></span>
+      <span class="game-name">Smoking Barrels</span>
+    </a>
+    <a class="game" href="games/snow-battle.html" aria-label="Play Snow Battle">
+      <span class="thumbnail"><img src="https://gms.parcoil.com/snowbattle/img/logo.png" alt="" loading="lazy"><span class="image-fallback" aria-hidden="true">Image unavailable</span></span>
+      <span class="game-name">Snow Battle</span>
+    </a>
+    <a class="game" href="games/soccer-random.html" aria-label="Play Soccer Random">
+      <span class="thumbnail"><img src="https://gms.parcoil.com/soccer-random/splash.png" alt="" loading="lazy"><span class="image-fallback" aria-hidden="true">Image unavailable</span></span>
+      <span class="game-name">Soccer Random</span>
+    </a>
+    <a class="game" href="games/soccer-skills.html" aria-label="Play Soccer Skills">
+      <span class="thumbnail"><img src="https://gms.parcoil.com/soccer-skills/splash.png" alt="" loading="lazy"><span class="image-fallback" aria-hidden="true">Image unavailable</span></span>
+      <span class="game-name">Soccer Skills</span>
+    </a>
+    <a class="game" href="games/soldier-legend.html" aria-label="Play Soldier Legend">
+      <span class="thumbnail"><img src="https://gms.parcoil.com/soldier-legend/images/logo.jpg" alt="" loading="lazy"><span class="image-fallback" aria-hidden="true">Image unavailable</span></span>
+      <span class="game-name">Soldier Legend</span>
+    </a>
+    <a class="game" href="games/solitaire.html" aria-label="Play Solitaire">
+      <span class="thumbnail"><img src="https://gms.parcoil.com/solitaire/img/hover.jpg" alt="" loading="lazy"><span class="image-fallback" aria-hidden="true">Image unavailable</span></span>
+      <span class="game-name">Solitaire</span>
+    </a>
+    <a class="game" href="games/sort-the-court.html" aria-label="Play Sort the Court">
+      <span class="thumbnail"><img src="https://gms.parcoil.com/sort-the-court/img/splash.png" alt="" loading="lazy"><span class="image-fallback" aria-hidden="true">Image unavailable</span></span>
+      <span class="game-name">Sort the Court</span>
+    </a>
+    <a class="game" href="games/soundboard.html" aria-label="Play Soundboard">
+      <span class="thumbnail"><img src="https://gms.parcoil.com/soundboard/img/mlg-favicon.png" alt="" loading="lazy"><span class="image-fallback" aria-hidden="true">Image unavailable</span></span>
+      <span class="game-name">Soundboard</span>
+    </a>
+    <a class="game" href="games/space-company.html" aria-label="Play Space Company">
+      <span class="thumbnail"><img src="https://gms.parcoil.com/space-company/whiteLogo.png" alt="" loading="lazy"><span class="image-fallback" aria-hidden="true">Image unavailable</span></span>
+      <span class="game-name">Space Company</span>
+    </a>
+    <a class="game" href="games/space-garden.html" aria-label="Play Space Garden">
+      <span class="thumbnail"><img src="https://gms.parcoil.com/spacegarden/spl.png" alt="" loading="lazy"><span class="image-fallback" aria-hidden="true">Image unavailable</span></span>
+      <span class="game-name">Space Garden</span>
+    </a>
+    <a class="game" href="games/spinning-rat.html" aria-label="Play Spinning Rat">
+      <span class="thumbnail"><img src="https://gms.parcoil.com/spinningrat/favicon-32x32.png" alt="" loading="lazy"><span class="image-fallback" aria-hidden="true">Image unavailable</span></span>
+      <span class="game-name">Spinning Rat</span>
+    </a>
+    <a class="game" href="games/stack.html" aria-label="Play Stack">
+      <span class="thumbnail"><img src="https://gms.parcoil.com/stack/stack.png" alt="" loading="lazy"><span class="image-fallback" aria-hidden="true">Image unavailable</span></span>
+      <span class="game-name">Stack</span>
+    </a>
+    <a class="game" href="games/stack-bump-3d.html" aria-label="Play Stack Bump 3D">
+      <span class="thumbnail"><img src="https://gms.parcoil.com/stack-bump-3d/thumbnail.jpg" alt="" loading="lazy"><span class="image-fallback" aria-hidden="true">Image unavailable</span></span>
+      <span class="game-name">Stack Bump 3D</span>
+    </a>
+    <a class="game" href="games/starve.html" aria-label="Play Starve">
+      <span class="thumbnail"><img src="https://gms.parcoil.com/starve/img/favicon.png" alt="" loading="lazy"><span class="image-fallback" aria-hidden="true">Image unavailable</span></span>
+      <span class="game-name">Starve</span>
+    </a>
+    <a class="game" href="games/station-141.html" aria-label="Play Station 141">
+      <span class="thumbnail"><img src="https://gms.parcoil.com/station-141/75wxYs.png" alt="" loading="lazy"><span class="image-fallback" aria-hidden="true">Image unavailable</span></span>
+      <span class="game-name">Station 141</span>
+    </a>
+    <a class="game" href="games/stealing-the-diamond.html" aria-label="Play Stealing the Diamond">
+      <span class="thumbnail"><img src="https://gms.parcoil.com/stealingthediamond/stealingthediamond.jpg" alt="" loading="lazy"><span class="image-fallback" aria-hidden="true">Image unavailable</span></span>
+      <span class="game-name">Stealing the Diamond</span>
+    </a>
+    <a class="game" href="games/stick-archers.html" aria-label="Play Stick Archers">
+      <span class="thumbnail"><img src="https://gms.parcoil.com/stick-archers/splash.jpg" alt="" loading="lazy"><span class="image-fallback" aria-hidden="true">Image unavailable</span></span>
+      <span class="game-name">Stick Archers</span>
+    </a>
+    <a class="game" href="games/stick-duel-battle.html" aria-label="Play Stick Duel Battle">
+      <span class="thumbnail"><img src="https://gms.parcoil.com/stick-duel-battle/512x512.jpg" alt="" loading="lazy"><span class="image-fallback" aria-hidden="true">Image unavailable</span></span>
+      <span class="game-name">Stick Duel Battle</span>
+    </a>
+    <a class="game" href="games/stick-merge.html" aria-label="Play Stick Merge">
+      <span class="thumbnail"><img src="https://gms.parcoil.com/stick-merge/splash.png" alt="" loading="lazy"><span class="image-fallback" aria-hidden="true">Image unavailable</span></span>
+      <span class="game-name">Stick Merge</span>
+    </a>
+    <a class="game" href="games/stickman-boost.html" aria-label="Play Stickman Boost">
+      <span class="thumbnail"><img src="https://gms.parcoil.com/stickman-boost/icon-256.png" alt="" loading="lazy"><span class="image-fallback" aria-hidden="true">Image unavailable</span></span>
+      <span class="game-name">Stickman Boost</span>
+    </a>
+    <a class="game" href="games/stickman-golf.html" aria-label="Play Stickman Golf">
+      <span class="thumbnail"><img src="https://gms.parcoil.com/stickman-golf/splash.png" alt="" loading="lazy"><span class="image-fallback" aria-hidden="true">Image unavailable</span></span>
+      <span class="game-name">Stickman Golf</span>
+    </a>
+    <a class="game" href="games/stickman-hook.html" aria-label="Play Stickman Hook">
+      <span class="thumbnail"><img src="https://gms.parcoil.com/stickman-hook/unnamed.jpg" alt="" loading="lazy"><span class="image-fallback" aria-hidden="true">Image unavailable</span></span>
+      <span class="game-name">Stickman Hook</span>
+    </a>
+    <a class="game" href="games/stick-war.html" aria-label="Play Stick War">
+      <span class="thumbnail"><img src="https://gms.parcoil.com/stickwar/stickwar.jpg" alt="" loading="lazy"><span class="image-fallback" aria-hidden="true">Image unavailable</span></span>
+      <span class="game-name">Stick War</span>
+    </a>
+    <a class="game" href="games/storm-the-house-2.html" aria-label="Play Storm the House 2">
+      <span class="thumbnail"><img src="https://gms.parcoil.com/stormthehouse2/stormthehouse2.jpg" alt="" loading="lazy"><span class="image-fallback" aria-hidden="true">Image unavailable</span></span>
+      <span class="game-name">Storm the House 2</span>
+    </a>
+    <a class="game" href="games/subway-surfers.html" aria-label="Play Subway Surfers">
+      <span class="thumbnail"><img src="https://gms.parcoil.com/subway-surfers/img/splash.jpg" alt="" loading="lazy"><span class="image-fallback" aria-hidden="true">Image unavailable</span></span>
+      <span class="game-name">Subway Surfers</span>
+    </a>
+    <a class="game" href="games/subway-surfers-ny.html" aria-label="Play Subway Surfers NY">
+      <span class="thumbnail"><img src="https://gms.parcoil.com/subway-surfers-ny/NewYorkIcon.png" alt="" loading="lazy"><span class="image-fallback" aria-hidden="true">Image unavailable</span></span>
+      <span class="game-name">Subway Surfers NY</span>
+    </a>
+    <a class="game" href="games/superhot.html" aria-label="Play Superhot">
+      <span class="thumbnail"><img src="https://gms.parcoil.com/superhot/hot.jpg" alt="" loading="lazy"><span class="image-fallback" aria-hidden="true">Image unavailable</span></span>
+      <span class="game-name">Superhot</span>
+    </a>
+    <a class="game" href="games/super-mario-construct.html" aria-label="Play Super Mario Construct">
+      <span class="thumbnail"><img src="https://gms.parcoil.com/supermarioconstruct/icons/icon-256.png" alt="" loading="lazy"><span class="image-fallback" aria-hidden="true">Image unavailable</span></span>
+      <span class="game-name">Super Mario Construct</span>
+    </a>
+    <a class="game" href="games/surviv.html" aria-label="Play Surviv">
+      <span class="thumbnail"><img src="https://gms.parcoil.com/surviv/img/favicon.png" alt="" loading="lazy"><span class="image-fallback" aria-hidden="true">Image unavailable</span></span>
+      <span class="game-name">Surviv</span>
+    </a>
+    <a class="game" href="games/sushi-unroll.html" aria-label="Play Sushi Unroll">
+      <span class="thumbnail"><img src="https://gms.parcoil.com/sushi-unroll/favicon.png" alt="" loading="lazy"><span class="image-fallback" aria-hidden="true">Image unavailable</span></span>
+      <span class="game-name">Sushi Unroll</span>
+    </a>
+    <a class="game" href="games/swerve.html" aria-label="Play Swerve">
+      <span class="thumbnail"><img src="https://gms.parcoil.com/swerve/img/favicon.jpg" alt="" loading="lazy"><span class="image-fallback" aria-hidden="true">Image unavailable</span></span>
+      <span class="game-name">Swerve</span>
+    </a>
+    <a class="game" href="games/synesthesia.html" aria-label="Play Synesthesia">
+      <span class="thumbnail"><img src="https://gms.parcoil.com/synesthesia/index.splash.png" alt="" loading="lazy"><span class="image-fallback" aria-hidden="true">Image unavailable</span></span>
+      <span class="game-name">Synesthesia</span>
+    </a>
+    <a class="game" href="games/tactical-weapon-pack-2.html" aria-label="Play Tactical Weapon Pack 2">
+      <span class="thumbnail"><img src="https://gms.parcoil.com/tactical-weapon-pack-2/splash.jpg" alt="" loading="lazy"><span class="image-fallback" aria-hidden="true">Image unavailable</span></span>
+      <span class="game-name">Tactical Weapon Pack 2</span>
+    </a>
+    <a class="game" href="games/tactical-assassin-2.html" aria-label="Play Tactical Assassin 2">
+      <span class="thumbnail"><img src="https://gms.parcoil.com/tacticalassasin2/tacticalassassin2.png" alt="" loading="lazy"><span class="image-fallback" aria-hidden="true">Image unavailable</span></span>
+      <span class="game-name">Tactical Assassin 2</span>
+    </a>
+    <a class="game" href="games/tank-trouble-2.html" aria-label="Play Tank Trouble 2">
+      <span class="thumbnail"><img src="https://gms.parcoil.com/tank-trouble-2/tank.jpeg" alt="" loading="lazy"><span class="image-fallback" aria-hidden="true">Image unavailable</span></span>
+      <span class="game-name">Tank Trouble 2</span>
+    </a>
+    <a class="game" href="games/tanuki-sunset.html" aria-label="Play Tanuki Sunset">
+      <span class="thumbnail"><img src="https://gms.parcoil.com/tanuki-sunset/img/logo.png" alt="" loading="lazy"><span class="image-fallback" aria-hidden="true">Image unavailable</span></span>
+      <span class="game-name">Tanuki Sunset</span>
+    </a>
+    <a class="game" href="games/temple-run-2.html" aria-label="Play Temple Run 2">
+      <span class="thumbnail"><img src="https://gms.parcoil.com/temple-run-2/img/temple-run-2-256.png" alt="" loading="lazy"><span class="image-fallback" aria-hidden="true">Image unavailable</span></span>
+      <span class="game-name">Temple Run 2</span>
+    </a>
+    <a class="game" href="games/the-final-earth.html" aria-label="Play The Final Earth">
+      <span class="thumbnail"><img src="https://gms.parcoil.com/the-final-earth/images.png" alt="" loading="lazy"><span class="image-fallback" aria-hidden="true">Image unavailable</span></span>
+      <span class="game-name">The Final Earth</span>
+    </a>
+    <a class="game" href="games/the-hotel.html" aria-label="Play The Hotel">
+      <span class="thumbnail"><img src="https://gms.parcoil.com/the-hotel/splash.png" alt="" loading="lazy"><span class="image-fallback" aria-hidden="true">Image unavailable</span></span>
+      <span class="game-name">The Hotel</span>
+    </a>
+    <a class="game" href="games/the-battle.html" aria-label="Play The Battle">
+      <span class="thumbnail"><img src="https://gms.parcoil.com/thebattle/thebattle.png" alt="" loading="lazy"><span class="image-fallback" aria-hidden="true">Image unavailable</span></span>
+      <span class="game-name">The Battle</span>
+    </a>
+    <a class="game" href="games/the-heist.html" aria-label="Play The Heist">
+      <span class="thumbnail"><img src="https://gms.parcoil.com/theheist/theheist.jpg" alt="" loading="lazy"><span class="image-fallback" aria-hidden="true">Image unavailable</span></span>
+      <span class="game-name">The Heist</span>
+    </a>
+    <a class="game" href="games/there-is-no-game.html" aria-label="Play There Is No Game">
+      <span class="thumbnail"><img src="https://gms.parcoil.com/there-is-no-game/logo.png" alt="" loading="lazy"><span class="image-fallback" aria-hidden="true">Image unavailable</span></span>
+      <span class="game-name">There Is No Game</span>
+    </a>
+    <a class="game" href="games/this-is-the-only-level.html" aria-label="Play This Is the Only Level">
+      <span class="thumbnail"><img src="https://gms.parcoil.com/thisistheonlylevel/thisistheonlylevel.png" alt="" loading="lazy"><span class="image-fallback" aria-hidden="true">Image unavailable</span></span>
+      <span class="game-name">This Is the Only Level</span>
+    </a>
+    <a class="game" href="games/tiny-fishing.html" aria-label="Play Tiny Fishing">
+      <span class="thumbnail"><img src="https://gms.parcoil.com/tiny-fishing/tiny-fishing.png" alt="" loading="lazy"><span class="image-fallback" aria-hidden="true">Image unavailable</span></span>
+      <span class="game-name">Tiny Fishing</span>
+    </a>
+    <a class="game" href="games/tiny-islands.html" aria-label="Play Tiny Islands">
+      <span class="thumbnail"><img src="https://gms.parcoil.com/tiny-islands/splash.png" alt="" loading="lazy"><span class="image-fallback" aria-hidden="true">Image unavailable</span></span>
+      <span class="game-name">Tiny Islands</span>
+    </a>
+    <a class="game" href="games/toss-the-turtle.html" aria-label="Play Toss the Turtle">
+      <span class="thumbnail"><img src="https://gms.parcoil.com/tosstheturtle/tosstheturtle.png" alt="" loading="lazy"><span class="image-fallback" aria-hidden="true">Image unavailable</span></span>
+      <span class="game-name">Toss the Turtle</span>
+    </a>
+    <a class="game" href="games/townscaper.html" aria-label="Play Townscaper">
+      <span class="thumbnail"><img src="https://gms.parcoil.com/townscaper/img/cover.jpg" alt="" loading="lazy"><span class="image-fallback" aria-hidden="true">Image unavailable</span></span>
+      <span class="game-name">Townscaper</span>
+    </a>
+    <a class="game" href="games/tube-jumpers.html" aria-label="Play Tube Jumpers">
+      <span class="thumbnail"><img src="https://gms.parcoil.com/tube-jumpers/img/icon.jpg" alt="" loading="lazy"><span class="image-fallback" aria-hidden="true">Image unavailable</span></span>
+      <span class="game-name">Tube Jumpers</span>
+    </a>
+    <a class="game" href="games/tunnel-rush.html" aria-label="Play Tunnel Rush">
+      <span class="thumbnail"><img src="https://gms.parcoil.com/tunnel-rush/img/tunnel.jpg" alt="" loading="lazy"><span class="image-fallback" aria-hidden="true">Image unavailable</span></span>
+      <span class="game-name">Tunnel Rush</span>
+    </a>
+    <a class="game" href="games/tv-static.html" aria-label="Play TV Static">
+      <span class="thumbnail"><img src="https://gms.parcoil.com/tv-static/static.png" alt="" loading="lazy"><span class="image-fallback" aria-hidden="true">Image unavailable</span></span>
+      <span class="game-name">TV Static</span>
+    </a>
+    <a class="game" href="games/twitch-tetris.html" aria-label="Play Twitch Tetris">
+      <span class="thumbnail"><img src="https://gms.parcoil.com/twitch-tetris/logo.png" alt="" loading="lazy"><span class="image-fallback" aria-hidden="true">Image unavailable</span></span>
+      <span class="game-name">Twitch Tetris</span>
+    </a>
+    <a class="game" href="games/veloce.html" aria-label="Play Veloce">
+      <span class="thumbnail"><img src="https://gms.parcoil.com/veloce/qN6zkD.png" alt="" loading="lazy"><span class="image-fallback" aria-hidden="true">Image unavailable</span></span>
+      <span class="game-name">Veloce</span>
+    </a>
+    <a class="game" href="games/vex-3.html" aria-label="Play Vex 3">
+      <span class="thumbnail"><img src="https://gms.parcoil.com/vex3/vex3.png" alt="" loading="lazy"><span class="image-fallback" aria-hidden="true">Image unavailable</span></span>
+      <span class="game-name">Vex 3</span>
+    </a>
+    <a class="game" href="games/vex-4.html" aria-label="Play Vex 4">
+      <span class="thumbnail"><img src="https://gms.parcoil.com/vex4/vex4.png" alt="" loading="lazy"><span class="image-fallback" aria-hidden="true">Image unavailable</span></span>
+      <span class="game-name">Vex 4</span>
+    </a>
+    <a class="game" href="games/vex-5.html" aria-label="Play Vex 5">
+      <span class="thumbnail"><img src="https://gms.parcoil.com/vex5/vex.jpeg" alt="" loading="lazy"><span class="image-fallback" aria-hidden="true">Image unavailable</span></span>
+      <span class="game-name">Vex 5</span>
+    </a>
+    <a class="game" href="games/vex-6.html" aria-label="Play Vex 6">
+      <span class="thumbnail"><img src="https://gms.parcoil.com/vex6/assets/icon.png" alt="" loading="lazy"><span class="image-fallback" aria-hidden="true">Image unavailable</span></span>
+      <span class="game-name">Vex 6</span>
+    </a>
+    <a class="game" href="games/vex-7.html" aria-label="Play Vex 7">
+      <span class="thumbnail"><img src="https://gms.parcoil.com/vex7/assets/icon.png" alt="" loading="lazy"><span class="image-fallback" aria-hidden="true">Image unavailable</span></span>
+      <span class="game-name">Vex 7</span>
+    </a>
+    <a class="game" href="games/wall-smash.html" aria-label="Play Wall Smash">
+      <span class="thumbnail"><img src="https://gms.parcoil.com/wallsmash/thumb.png" alt="" loading="lazy"><span class="image-fallback" aria-hidden="true">Image unavailable</span></span>
+      <span class="game-name">Wall Smash</span>
+    </a>
+    <a class="game" href="games/waterworks.html" aria-label="Play Waterworks">
+      <span class="thumbnail"><img src="https://gms.parcoil.com/waterworks/square.png" alt="" loading="lazy"><span class="image-fallback" aria-hidden="true">Image unavailable</span></span>
+      <span class="game-name">Waterworks</span>
+    </a>
+    <a class="game" href="games/weavesilk.html" aria-label="Play WeaveSilk">
+      <span class="thumbnail"><img src="https://gms.parcoil.com/weavesilk/thumb.png" alt="" loading="lazy"><span class="image-fallback" aria-hidden="true">Image unavailable</span></span>
+      <span class="game-name">WeaveSilk</span>
+    </a>
+    <a class="game" href="games/webgl-fluid-simulation.html" aria-label="Play WebGL Fluid Simulation">
+      <span class="thumbnail"><img src="https://gms.parcoil.com/webgl-fluid-simulation/promo_back.png" alt="" loading="lazy"><span class="image-fallback" aria-hidden="true">Image unavailable</span></span>
+      <span class="game-name">WebGL Fluid Simulation</span>
+    </a>
+    <a class="game" href="games/webretro.html" aria-label="Play WebRetro">
+      <span class="thumbnail"><img src="https://gms.parcoil.com/webretro/assets/icons/iconm256.png" alt="" loading="lazy"><span class="image-fallback" aria-hidden="true">Image unavailable</span></span>
+      <span class="game-name">WebRetro</span>
+    </a>
+    <a class="game" href="games/win-the-white-house.html" aria-label="Play Win the White House">
+      <span class="thumbnail"><img src="https://gms.parcoil.com/win-the-whitehouse/splash.png" alt="" loading="lazy"><span class="image-fallback" aria-hidden="true">Image unavailable</span></span>
+      <span class="game-name">Win the White House</span>
+    </a>
+    <a class="game" href="games/wolf-3d.html" aria-label="Play Wolf 3D">
+      <span class="thumbnail"><img src="https://gms.parcoil.com/wolf3d/art/wolf3d.png" alt="" loading="lazy"><span class="image-fallback" aria-hidden="true">Image unavailable</span></span>
+      <span class="game-name">Wolf 3D</span>
+    </a>
+    <a class="game" href="games/wordle.html" aria-label="Play Wordle">
+      <span class="thumbnail"><img src="https://gms.parcoil.com/wordle/img/logo_512x512.png" alt="" loading="lazy"><span class="image-fallback" aria-hidden="true">Image unavailable</span></span>
+      <span class="game-name">Wordle</span>
+    </a>
+    <a class="game" href="games/world-s-hardest-game.html" aria-label="Play World&#x27;s Hardest Game">
+      <span class="thumbnail"><img src="https://gms.parcoil.com/worlds-hardest-game/images/splash.jpg" alt="" loading="lazy"><span class="image-fallback" aria-hidden="true">Image unavailable</span></span>
+      <span class="game-name">World&#x27;s Hardest Game</span>
+    </a>
+    <a class="game" href="games/world-s-hardest-game-2.html" aria-label="Play World&#x27;s Hardest Game 2">
+      <span class="thumbnail"><img src="https://gms.parcoil.com/worlds-hardest-game-2/the-worlds-hardest-game-2.jpg" alt="" loading="lazy"><span class="image-fallback" aria-hidden="true">Image unavailable</span></span>
+      <span class="game-name">World&#x27;s Hardest Game 2</span>
+    </a>
+    <a class="game" href="games/x-trial-racing.html" aria-label="Play X-Trial Racing">
+      <span class="thumbnail"><img src="https://gms.parcoil.com/x-trial-racing/splash.png" alt="" loading="lazy"><span class="image-fallback" aria-hidden="true">Image unavailable</span></span>
+      <span class="game-name">X-Trial Racing</span>
+    </a>
+    <a class="game" href="games/xx142-b2-exe.html" aria-label="Play xx142-B2.exe">
+      <span class="thumbnail"><img src="https://gms.parcoil.com/xx142-b2exe/splash.png" alt="" loading="lazy"><span class="image-fallback" aria-hidden="true">Image unavailable</span></span>
+      <span class="game-name">xx142-B2.exe</span>
+    </a>
+    <a class="game" href="games/yoshi-fabrication.html" aria-label="Play Yoshi Fabrication">
+      <span class="thumbnail"><img src="https://gms.parcoil.com/yoshifabrication/icons/icon-512.png" alt="" loading="lazy"><span class="image-fallback" aria-hidden="true">Image unavailable</span></span>
+      <span class="game-name">Yoshi Fabrication</span>
+    </a>
+    <a class="game" href="games/you-are-bezos.html" aria-label="Play You Are Bezos">
+      <span class="thumbnail"><img src="https://gms.parcoil.com/you-are-bezos/img/banner.png" alt="" loading="lazy"><span class="image-fallback" aria-hidden="true">Image unavailable</span></span>
+      <span class="game-name">You Are Bezos</span>
+    </a>
+    <a class="game" href="games/zombs-royale.html" aria-label="Play Zombs Royale">
+      <span class="thumbnail"><img src="https://gms.parcoil.com/zombs-royale/zomb.png" alt="" loading="lazy"><span class="image-fallback" aria-hidden="true">Image unavailable</span></span>
+      <span class="game-name">Zombs Royale</span>
+    </a>
+  </main>
+  <p id="empty" hidden>No games match your search.</p>
+  <script>
+    const search = document.getElementById('search');
+    const gameCards = [...document.querySelectorAll('.game')];
+    const empty = document.getElementById('empty');
+    search.addEventListener('input', () => {
+      const query = search.value.trim().toLowerCase();
+      let visibleCount = 0;
+      gameCards.forEach((game) => {
+        const visible = game.textContent.toLowerCase().includes(query);
+        game.hidden = !visible;
+        if (visible) visibleCount++;
+      });
+      empty.hidden = visibleCount !== 0;
+    });
+    document.querySelectorAll('.thumbnail img').forEach((image) => {
+      image.addEventListener('error', () => image.classList.add('image-failed'), { once: true });
+    });
+  </script>
+</body>
+</html>

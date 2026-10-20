@@ -35,7 +35,7 @@
         align-items: center;
         justify-content: center;
         gap: 24px;
-        padding: 12px 20px 0;
+        padding: 64px 20px 0;
       }
 
       .site-header .center {
@@ -45,6 +45,15 @@
       .top-nav {
         display: flex;
         gap: 10px;
+        position: fixed;
+        top: 12px;
+        right: 12px;
+        z-index: 10000;
+        padding: 8px;
+        border: 1px solid #ffffff;
+        border-radius: 10px;
+        background: #000000;
+        box-shadow: 0 2px 12px rgba(0, 0, 0, 0.7);
       }
 
       @media only screen and (max-width: 600px) {
@@ -55,11 +64,14 @@
       }
 
       .nav-button {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
         padding: 9px 16px;
-        border: 1px solid var(--accent-color);
+        border: 2px solid #ffffff !important;
         border-radius: 8px;
-        background: transparent;
-        color: var(--text-color);
+        background: #000000 !important;
+        color: #ffffff !important;
         font-size: 15px;
         font-weight: 600;
         text-decoration: none;
@@ -68,8 +80,8 @@
 
       .nav-button:hover,
       .nav-button:focus-visible {
-        background: var(--accent-color);
-        color: var(--background-color);
+        background: #ffffff !important;
+        color: #000000 !important;
       }
 
       #settingsDialog {
